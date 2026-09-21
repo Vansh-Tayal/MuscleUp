@@ -58,7 +58,7 @@ _Italic entries are warm-ups and cool-downs._
 |  | _Kneeling Lat Stretch + Forearm Stretch_ | Flat Bench + Exercise Mat | mobility | 6-8 min |
 | **Sat** — Legs B - Hamstrings, Glutes, Quads, Calves, Abs, Obliques, Abductors | _Bike + Hip Hinge & Empty-Bar Drill_ | Upright Exercise Bike + Empty Barbell | mobility | 7-8 min |
 |  | Barbell Romanian Deadlift | Barbell + rack, J-hooks set at mid-thigh height to un-rack | hamstrings | 3 × 8-10 |
-|  | Hack Squat | Hack Squat Machine - plate loaded | quads | 3 × 8-12 |
+|  | Smith Machine Squat - feet forward | Smith Machine, feet set a step forward of the bar | quads | 3 × 8-12 |
 |  | Dumbbell Split Squat - both feet on the floor (2 sets per side) | Adjustable Dumbbells + squat rack upright to hold for balance | glutes | 4 × 8-12 |
 |  | Lying Leg Curl | Lying Leg Curl Machine - selectorised | hamstrings | 3 × 10-15 |
 |  | Seated Calf Raise | Seated Calf Raise Machine | calves | 3 × 12-20 |
