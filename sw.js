@@ -2,7 +2,7 @@
    Strategy: cache-first for the shell (instant open in a gym basement),
    with a quiet background refresh so updates land on the next launch.
    Bump CACHE when you change index.html. */
-const CACHE = 'muscleup-v4';
+const CACHE = 'muscleup-v5';
 const SHELL = [
   './',
   './index.html',

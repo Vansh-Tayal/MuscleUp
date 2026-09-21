@@ -24,7 +24,7 @@ _Italic entries are warm-ups and cool-downs._
 |  | 45-Degree Back Extension | 45-degree Back Extension Bench | lower back | 3 × 10-15 |
 |  | Neck Flexion / Extension - hand resistance | Flat Bench + own hand resistance | neck | 2 × 12-15 |
 |  | Seated Dumbbell Wrist Curl | Adjustable Dumbbells + flat bench | forearms | 2 × 15-20 |
-|  | _Hanging Lat Stretch + Child's Pose_ | Pull-Up Bar + Exercise Mat | mobility | 6-8 min |
+|  | _Hanging Lat Stretch + Child's Pose_ | Pull-Up Bar (or the assisted pull-up machine bar) + Exercise Mat | mobility | 6-8 min |
 | **Wed** — Legs A - Quads, Glutes, Hamstrings, Adductors, Abductors, Calves | _Bike + Squat & Empty-Bar Prep_ | Upright Exercise Bike + Empty Barbell | mobility | 7-8 min |
 |  | Barbell Back Squat | Barbell + rack, safety pins set just below your bottom position | quads | 3 × 8-10 |
 |  | 45-Degree Leg Press | 45-Degree Leg Press Machine | quads | 3 × 10-12 |
@@ -47,7 +47,7 @@ _Italic entries are warm-ups and cool-downs._
 |  | Machine Crunch | Abdominal Crunch Machine - selectorised | abs | 3 × 12-20 |
 |  | _Thoracic Opener + Cross-Body Stretch_ | Foam Roller + Exercise Mat | mobility | 6-8 min |
 | **Fri** — Pull B - Lats, Upper Back, Rear Delts, Traps, Biceps, Forearms, Neck | _Rower + Cable Face Pull Prep_ | Rowing Ergometer + Cable Station - high pulley, rope | mobility | 7-8 min |
-|  | Assisted Pull-Up | Assisted Pull-Up Machine (or Pull-Up Bar with a resistance band) | lats | 3 × 6-10 |
+|  | Assisted Pull-Up | Assisted Pull-Up Machine - knee pad, wide bar | lats | 3 × 6-10 |
 |  | Chest-Supported Dumbbell Row | Adjustable Dumbbells + 30-degree incline bench | upper back | 3 × 8-12 |
 |  | Seated Cable Row - close neutral grip | Seated Cable Row - low pulley, V-handle | lats | 3 × 8-12 |
 |  | Cable Rear Delt Fly | Cable Crossover - both high pulleys, D-handles, cables crossed | rear delts | 2 × 12-15 |
