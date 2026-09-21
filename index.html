@@ -347,6 +347,17 @@ h1,h2,h3,h4{margin:0;font-weight:700;line-height:1.25}
 .btn.block{width:100%}
 .btn:disabled{opacity:.4}
 
+/* ---- "this machine is busy" alternatives ---- */
+.alts-line{
+  display:flex;gap:8px;align-items:baseline;margin-top:11px;padding:9px 11px;
+  background:var(--surface2);border-radius:9px;font-size:12px;color:var(--text-dim);line-height:1.45;
+}
+.alts-line b{
+  flex:none;font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;
+  color:var(--warn);
+}
+.alts-line span{min-width:0}
+
 /* ---- Exercise diagrams ---- */
 .dia-wrap{margin-top:11px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:8px 8px 4px}
 .dia-wrap svg{display:block;width:100%;height:auto;max-width:340px;margin:0 auto}
@@ -871,7 +882,11 @@ const SEED_PLAN = {
             "repRange": "6-10",
             "restSeconds": 150,
             "formCue": "Elbows 45 degrees, touch mid-chest, stop 2 reps short",
-            "type": "main"
+            "type": "main",
+            "alternatives": [
+              "Do Pec Deck first, come back",
+              "Dumbbell Bench Press, heavier"
+            ]
           },
           {
             "id": "mon-dumbbell-bench-press",
@@ -886,7 +901,11 @@ const SEED_PLAN = {
             "repRange": "8-12",
             "restSeconds": 120,
             "formCue": "Lower until the elbows sit just below the chest, 2 reps short",
-            "type": "main"
+            "type": "main",
+            "alternatives": [
+              "Pec Deck Fly",
+              "Low-to-High Cable Fly"
+            ]
           },
           {
             "id": "mon-pec-deck-fly",
@@ -900,7 +919,11 @@ const SEED_PLAN = {
             "repRange": "10-15",
             "restSeconds": 60,
             "formCue": "Open until the chest stretches, elbows locked at one angle",
-            "type": "main"
+            "type": "main",
+            "alternatives": [
+              "Cable Crossover, high pulley",
+              "Incline Dumbbell Fly"
+            ]
           },
           {
             "id": "mon-seated-dumbbell-shoulder-press",
@@ -1026,7 +1049,11 @@ const SEED_PLAN = {
             "repRange": "8-12",
             "restSeconds": 90,
             "formCue": "Drive the elbows down to your collarbone, stop 2 reps short",
-            "type": "main"
+            "type": "main",
+            "alternatives": [
+              "Assisted Pull-Up",
+              "Lat Pulldown, neutral V-bar"
+            ]
           },
           {
             "id": "tue-seated-cable-row-wide",
@@ -1042,7 +1069,11 @@ const SEED_PLAN = {
             "repRange": "10-15",
             "restSeconds": 90,
             "formCue": "Row high to the lower chest and pinch the shoulder blades",
-            "type": "main"
+            "type": "main",
+            "alternatives": [
+              "Single-arm Dumbbell Row",
+              "Chest-Supported Dumbbell Row"
+            ]
           },
           {
             "id": "tue-reverse-pec-deck",
@@ -1056,7 +1087,11 @@ const SEED_PLAN = {
             "repRange": "12-15",
             "restSeconds": 60,
             "formCue": "Thumbs down, push wide with near-straight arms, no shrug",
-            "type": "main"
+            "type": "main",
+            "alternatives": [
+              "Cable Rear Delt Fly",
+              "Rope Face Pull"
+            ]
           },
           {
             "id": "tue-dumbbell-shrug",
@@ -1070,7 +1105,11 @@ const SEED_PLAN = {
             "repRange": "10-15",
             "restSeconds": 60,
             "formCue": "Shrug straight up to your ears and pause one second on top",
-            "type": "main"
+            "type": "main",
+            "alternatives": [
+              "Cable Shrug",
+              "Barbell Shrug"
+            ]
           },
           {
             "id": "tue-incline-dumbbell-curl",
@@ -1346,7 +1385,11 @@ const SEED_PLAN = {
             "repRange": "6-10",
             "restSeconds": 150,
             "formCue": "Bar to the upper chest, shoulder blades pinned, 2 reps short",
-            "type": "main"
+            "type": "main",
+            "alternatives": [
+              "Incline Dumbbell Press, heavier",
+              "Do the cable fly first"
+            ]
           },
           {
             "id": "thu-incline-dumbbell-press",
@@ -1361,7 +1404,11 @@ const SEED_PLAN = {
             "repRange": "10-15",
             "restSeconds": 90,
             "formCue": "Go deeper than the barbell allows, stop 2 reps short",
-            "type": "main"
+            "type": "main",
+            "alternatives": [
+              "Incline Dumbbell Fly",
+              "Low-to-High Cable Fly"
+            ]
           },
           {
             "id": "thu-cable-crossover-low",
@@ -1375,7 +1422,11 @@ const SEED_PLAN = {
             "repRange": "12-15",
             "restSeconds": 60,
             "formCue": "Sweep the hands up to chin height, small bend in the elbows",
-            "type": "main"
+            "type": "main",
+            "alternatives": [
+              "Pec Deck Fly",
+              "Incline Dumbbell Fly"
+            ]
           },
           {
             "id": "thu-dumbbell-lateral-raise",
@@ -1404,7 +1455,11 @@ const SEED_PLAN = {
             "repRange": "8-12",
             "restSeconds": 120,
             "formCue": "Elbows tucked close to the ribs, bar to the lower chest",
-            "type": "main"
+            "type": "main",
+            "alternatives": [
+              "Rope Triceps Pushdown, add a set",
+              "Seated Dumbbell Overhead Extension"
+            ]
           },
           {
             "id": "thu-dumbbell-overhead-triceps-extension",
@@ -1433,7 +1488,11 @@ const SEED_PLAN = {
             "repRange": "12-15",
             "restSeconds": 60,
             "formCue": "Pull the rope to your forehead, knuckles rotate to ceiling",
-            "type": "main"
+            "type": "main",
+            "alternatives": [
+              "Reverse Pec Deck",
+              "Single-arm Cable Reverse Fly"
+            ]
           },
           {
             "id": "thu-machine-crunch",
@@ -1502,7 +1561,11 @@ const SEED_PLAN = {
             "repRange": "6-10",
             "restSeconds": 90,
             "formCue": "Chest up, elbows to your back pockets, stop 2 reps short",
-            "type": "main"
+            "type": "main",
+            "alternatives": [
+              "Wide-Grip Lat Pulldown",
+              "Lat Pulldown, neutral V-bar"
+            ]
           },
           {
             "id": "fri-chest-supported-dumbbell-row",
@@ -1518,7 +1581,11 @@ const SEED_PLAN = {
             "repRange": "8-12",
             "restSeconds": 90,
             "formCue": "Chest glued to the pad, elbows past the ribs, 2 reps left",
-            "type": "main"
+            "type": "main",
+            "alternatives": [
+              "Single-arm Dumbbell Row",
+              "Seated Cable Row, V-handle"
+            ]
           },
           {
             "id": "fri-seated-cable-row",
@@ -1533,7 +1600,11 @@ const SEED_PLAN = {
             "repRange": "8-12",
             "restSeconds": 90,
             "formCue": "Chest tall, pull the handle to your belly, no leaning back",
-            "type": "main"
+            "type": "main",
+            "alternatives": [
+              "Single-arm Seated Cable Row",
+              "Chest-Supported Dumbbell Row"
+            ]
           },
           {
             "id": "fri-cable-rear-delt-fly",
@@ -1547,7 +1618,11 @@ const SEED_PLAN = {
             "repRange": "12-15",
             "restSeconds": 60,
             "formCue": "Arms wide like a scarecrow, stop when hands pass shoulders",
-            "type": "main"
+            "type": "main",
+            "alternatives": [
+              "Single-arm Cable Reverse Fly, one high pulley",
+              "Reverse Pec Deck"
+            ]
           },
           {
             "id": "fri-cable-shrug",
@@ -1561,7 +1636,11 @@ const SEED_PLAN = {
             "repRange": "12-15",
             "restSeconds": 60,
             "formCue": "Shrug straight up, hold one second, lower all the way down",
-            "type": "main"
+            "type": "main",
+            "alternatives": [
+              "Dumbbell Shrug",
+              "Barbell Shrug"
+            ]
           },
           {
             "id": "fri-behind-body-cable-curl",
@@ -2084,7 +2163,11 @@ const DIAGRAMS = {
   "dumbbell-shrug": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Front view of a dumbbell shrug: lifter standing with a dumbbell hanging at each side, shoulders lifting straight up toward the ears.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<circle class=\"head\" cx=\"120\" cy=\"50\" r=\"9\"/>\n<path class=\"bod\" d=\"M120 60v46\"/>\n<path class=\"bod\" d=\"M120 106l-10 22-2 20\"/><path class=\"bod\" d=\"M120 106l12 22 2 20\"/>\n<path class=\"bod\" d=\"M104 68l-6 38\"/><path class=\"bod\" d=\"M136 68l6 38\"/>\n<path class=\"st\" d=\"M84 110h28\"/>\n<rect class=\"st-f\" x=\"78\" y=\"100\" width=\"8\" height=\"20\" rx=\"2\"/>\n<rect class=\"st-f\" x=\"110\" y=\"100\" width=\"8\" height=\"20\" rx=\"2\"/>\n<path class=\"st\" d=\"M128 110h28\"/>\n<rect class=\"st-f\" x=\"122\" y=\"100\" width=\"8\" height=\"20\" rx=\"2\"/>\n<rect class=\"st-f\" x=\"154\" y=\"100\" width=\"8\" height=\"20\" rx=\"2\"/>\n<path class=\"arw\" d=\"M74 84V58\"/><path class=\"arw\" d=\"M166 84V58\"/>\n<text class=\"lbl\" x=\"44\" y=\"98\">straight up</text>\n<text class=\"lbl\" x=\"160\" y=\"98\">no rolling</text>\n</svg>",
   "face-pull": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of a rope face pull: cable set high, lifter pulls the rope toward the forehead with the elbows flared high and back.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M206 150V32\"/>\n<rect class=\"st-f\" x=\"186\" y=\"58\" width=\"24\" height=\"70\" rx=\"2\"/>\n<path class=\"thin\" d=\"M186 70h24M186 82h24M186 94h24M186 106h24\"/>\n<circle class=\"st\" cx=\"200\" cy=\"46\" r=\"5\"/>\n<text class=\"lbl\" x=\"176\" y=\"40\">high</text>\n<path class=\"thin\" d=\"M195 48L126 62\"/>\n<path class=\"st\" d=\"M126 56v14\"/><path class=\"st\" d=\"M118 58l8 4M118 70l8-4\"/>\n<text class=\"lbl\" x=\"100\" y=\"50\">rope</text>\n<circle class=\"head\" cx=\"96\" cy=\"64\" r=\"8\"/>\n<path class=\"bod\" d=\"M96 74v34\"/>\n<path class=\"bod\" d=\"M96 108l-10 22-2 18\"/><path class=\"bod\" d=\"M96 108l12 20 2 20\"/>\n<path class=\"bod\" d=\"M96 82l26-6 22-14\"/>\n<text class=\"lbl\" x=\"128\" y=\"86\">elbows high</text>\n<path class=\"arw\" d=\"M156 106h-34\"/>\n<text class=\"lbl\" x=\"122\" y=\"120\">to the forehead</text>\n</svg>",
   "cable-rear-delt-fly": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Front view of a cable rear delt fly: both pulleys set high with the cables crossed in front, lifter sweeping both arms out wide at shoulder height.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M28 150V32M212 150V32\"/><path class=\"st\" d=\"M28 32h184\"/>\n<rect class=\"st-f\" x=\"18\" y=\"64\" width=\"22\" height=\"62\" rx=\"2\"/>\n<rect class=\"st-f\" x=\"200\" y=\"64\" width=\"22\" height=\"62\" rx=\"2\"/>\n<path class=\"thin\" d=\"M18 76h22M18 88h22M18 100h22M18 112h22\"/>\n<path class=\"thin\" d=\"M200 76h22M200 88h22M200 100h22M200 112h22\"/>\n<circle class=\"st\" cx=\"34\" cy=\"46\" r=\"5\"/><circle class=\"st\" cx=\"206\" cy=\"46\" r=\"5\"/>\n<path class=\"thin\" d=\"M39 49l136 30M201 49L65 79\"/>\n<text class=\"lbl\" x=\"96\" y=\"44\">cables crossed</text>\n<circle class=\"head\" cx=\"120\" cy=\"64\" r=\"9\"/>\n<path class=\"bod\" d=\"M120 74v34\"/>\n<path class=\"bod\" d=\"M120 108l-11 22-2 18\"/><path class=\"bod\" d=\"M120 108l13 22 2 18\"/>\n<path class=\"bod\" d=\"M106 82l-20-2-21-1\"/><path class=\"bod\" d=\"M134 82l20-2 21-1\"/>\n<path class=\"arw\" d=\"M74 104q-6-16 4-24\"/><path class=\"arw\" d=\"M166 104q6-16-4-24\"/>\n<text class=\"lbl\" x=\"82\" y=\"130\">stop when the hands pass your shoulders</text>\n</svg>",
-  "cable-shrug": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of a cable shrug: low pulley with a straight bar held at arms length in front of the thighs, shoulders lifting straight up.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M34 150V52\"/>\n<rect class=\"st-f\" x=\"24\" y=\"58\" width=\"24\" height=\"62\" rx=\"2\"/>\n<path class=\"thin\" d=\"M24 70h24M24 82h24M24 94h24M24 106h24\"/>\n<circle class=\"st\" cx=\"42\" cy=\"130\" r=\"5\"/>\n<text class=\"lbl\" x=\"26\" y=\"146\">low</text>\n<path class=\"thin\" d=\"M47 128l56-14\"/>\n<circle class=\"head\" cx=\"140\" cy=\"54\" r=\"9\"/>\n<path class=\"bod\" d=\"M140 64v44\"/>\n<path class=\"bod\" d=\"M140 108l-8 22-2 18\"/><path class=\"bod\" d=\"M140 108l10 22 2 18\"/>\n<path class=\"bod\" d=\"M126 72l-4 38\"/>\n<path class=\"st\" d=\"M104 112h32\"/>\n<text class=\"lbl\" x=\"92\" y=\"104\">straight bar</text>\n<path class=\"arw\" d=\"M168 88V60\"/>\n<text class=\"lbl\" x=\"164\" y=\"102\">shrug up, pause</text>\n</svg>"
+  "cable-shrug": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of a cable shrug: low pulley with a straight bar held at arms length in front of the thighs, shoulders lifting straight up.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M34 150V52\"/>\n<rect class=\"st-f\" x=\"24\" y=\"58\" width=\"24\" height=\"62\" rx=\"2\"/>\n<path class=\"thin\" d=\"M24 70h24M24 82h24M24 94h24M24 106h24\"/>\n<circle class=\"st\" cx=\"42\" cy=\"130\" r=\"5\"/>\n<text class=\"lbl\" x=\"26\" y=\"146\">low</text>\n<path class=\"thin\" d=\"M47 128l56-14\"/>\n<circle class=\"head\" cx=\"140\" cy=\"54\" r=\"9\"/>\n<path class=\"bod\" d=\"M140 64v44\"/>\n<path class=\"bod\" d=\"M140 108l-8 22-2 18\"/><path class=\"bod\" d=\"M140 108l10 22 2 18\"/>\n<path class=\"bod\" d=\"M126 72l-4 38\"/>\n<path class=\"st\" d=\"M104 112h32\"/>\n<text class=\"lbl\" x=\"92\" y=\"104\">straight bar</text>\n<path class=\"arw\" d=\"M168 88V60\"/>\n<text class=\"lbl\" x=\"164\" y=\"102\">shrug up, pause</text>\n</svg>",
+  "db-shoulder-press": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of a seated dumbbell shoulder press: upright bench with the back pad vertical, lifter pressing a dumbbell straight overhead.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<rect class=\"st-f\" x=\"132\" y=\"56\" width=\"11\" height=\"64\" rx=\"4\"/>\n<rect class=\"st-f\" x=\"96\" y=\"118\" width=\"48\" height=\"9\" rx=\"3\"/>\n<path class=\"st\" d=\"M104 127v23M138 127v23\"/>\n<text class=\"lbl\" x=\"146\" y=\"86\">back upright</text>\n<circle class=\"head\" cx=\"118\" cy=\"66\" r=\"8\"/>\n<path class=\"bod\" d=\"M120 76l4 42\"/>\n<path class=\"bod\" d=\"M124 118l-26 6\"/><path class=\"bod\" d=\"M98 124l-6 26\"/>\n<path class=\"bod\" d=\"M114 84l-10-20-2-18\"/>\n<path class=\"st\" d=\"M88 44h30\"/>\n<rect class=\"st-f\" x=\"82\" y=\"34\" width=\"8\" height=\"20\" rx=\"2\"/>\n<rect class=\"st-f\" x=\"116\" y=\"34\" width=\"8\" height=\"20\" rx=\"2\"/>\n<path class=\"arw\" d=\"M62 50v26\"/>\n<text class=\"lbl\" x=\"34\" y=\"92\">never lock out</text>\n</svg>",
+  "cable-lateral-raise": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Front view of a single-arm cable lateral raise: low pulley to the side, lifter standing and raising one arm out to shoulder height.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M34 150V56\"/>\n<rect class=\"st-f\" x=\"24\" y=\"62\" width=\"22\" height=\"58\" rx=\"2\"/>\n<path class=\"thin\" d=\"M24 74h22M24 86h22M24 98h22M24 110h22\"/>\n<circle class=\"st\" cx=\"42\" cy=\"130\" r=\"5\"/>\n<text class=\"lbl\" x=\"26\" y=\"146\">low</text>\n<path class=\"thin\" d=\"M47 127L76 80\"/>\n<circle class=\"head\" cx=\"132\" cy=\"54\" r=\"9\"/>\n<path class=\"bod\" d=\"M132 64v46\"/>\n<path class=\"bod\" d=\"M132 110l-10 22-2 18\"/><path class=\"bod\" d=\"M132 110l12 22 2 18\"/>\n<path class=\"bod\" d=\"M118 74L98 72 78 76\"/>\n<path class=\"bod\" d=\"M146 74l4 34\"/>\n<path class=\"thin\" d=\"M78 78v10\"/>\n<path class=\"arw\" d=\"M84 116q-8-24 -6-38\"/>\n<text class=\"lbl\" x=\"84\" y=\"134\">lead with the elbow</text>\n<path class=\"thin\" d=\"M70 74h124\"/>\n<text class=\"lbl\" x=\"166\" y=\"70\">shoulder height — stop here</text>\n</svg>",
+  "machine-shoulder-press": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of a seated shoulder press machine: weight stack at the rear, upright back pad, handles above the shoulder pressed straight up.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M62 150h140\"/><path class=\"st\" d=\"M196 150V62\"/>\n<rect class=\"st-f\" x=\"178\" y=\"68\" width=\"24\" height=\"68\" rx=\"2\"/>\n<path class=\"thin\" d=\"M178 80h24M178 92h24M178 104h24M178 116h24\"/>\n<text class=\"lbl\" x=\"168\" y=\"62\">stack</text>\n<rect class=\"st-f\" x=\"148\" y=\"60\" width=\"11\" height=\"58\" rx=\"4\"/>\n<rect class=\"st-f\" x=\"110\" y=\"116\" width=\"48\" height=\"9\" rx=\"3\"/>\n<path class=\"st\" d=\"M134 125v25\"/>\n<path class=\"st\" d=\"M154 76L112 56\"/>\n<path class=\"st\" d=\"M112 48v16\"/>\n<circle cx=\"154\" cy=\"76\" r=\"3.4\" fill=\"currentColor\"/>\n<text class=\"lbl\" x=\"92\" y=\"44\">handles</text>\n<circle class=\"head\" cx=\"138\" cy=\"70\" r=\"8\"/>\n<path class=\"bod\" d=\"M136 80l2 36\"/>\n<path class=\"bod\" d=\"M138 116l-26 6\"/><path class=\"bod\" d=\"M112 122l-4 28\"/>\n<path class=\"bod\" d=\"M133 88l-14-12-8-18\"/>\n<path class=\"arw\" d=\"M84 60v24\"/>\n<text class=\"lbl\" x=\"58\" y=\"98\">back flat on the pad</text>\n</svg>",
+  "db-lateral-raise": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Front view of a dumbbell lateral raise: lifter standing and raising a dumbbell in each hand out to the sides, stopping level with the shoulders.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"thin\" d=\"M40 74h160\"/>\n<text class=\"lbl\" x=\"40\" y=\"68\">stop level with the shoulders</text>\n<circle class=\"head\" cx=\"120\" cy=\"52\" r=\"9\"/>\n<path class=\"bod\" d=\"M120 62v46\"/>\n<path class=\"bod\" d=\"M120 108l-11 22-2 18\"/><path class=\"bod\" d=\"M120 108l13 22 2 18\"/>\n<path class=\"bod\" d=\"M106 72L84 70 64 74\"/><path class=\"bod\" d=\"M134 72l22-2 20 4\"/>\n<path class=\"st\" d=\"M52 74h26\"/>\n<rect class=\"st-f\" x=\"46\" y=\"66\" width=\"7\" height=\"17\" rx=\"2\"/>\n<rect class=\"st-f\" x=\"76\" y=\"66\" width=\"7\" height=\"17\" rx=\"2\"/>\n<path class=\"st\" d=\"M162 74h26\"/>\n<rect class=\"st-f\" x=\"156\" y=\"66\" width=\"7\" height=\"17\" rx=\"2\"/>\n<rect class=\"st-f\" x=\"186\" y=\"66\" width=\"7\" height=\"17\" rx=\"2\"/>\n<path class=\"arw\" d=\"M72 118q-10-22-8-36\"/><path class=\"arw\" d=\"M168 118q10-22 8-36\"/>\n<text class=\"lbl\" x=\"82\" y=\"140\">go light — no swinging from the hips</text>\n</svg>"
 };
 const DIAGRAM_NAMES = {
     "barbellbenchpress": "bench-barbell",
@@ -2126,7 +2209,18 @@ const DIAGRAM_NAMES = {
     "seatedcablereardeltrowropeflaredelbows": "face-pull",
     "cablereardeltfly": "cable-rear-delt-fly",
     "chestsupporteddumbbellreardeltfly": "cable-rear-delt-fly",
-    "cableshrug": "cable-shrug"
+    "cableshrug": "cable-shrug",
+    "seateddumbbellshoulderpress": "db-shoulder-press",
+    "arnoldpressseated": "db-shoulder-press",
+    "seatedshoulderpress": "machine-shoulder-press",
+    "seatedshoulderpressmachine": "machine-shoulder-press",
+    "smithmachineshoulderpressseated": "machine-shoulder-press",
+    "cablelateralraise2setsperside": "cable-lateral-raise",
+    "cablelateralraisesinglearm": "cable-lateral-raise",
+    "dumbbelllateralraise": "db-lateral-raise",
+    "dumbbelllateralraisestanding": "db-lateral-raise",
+    "seateddumbbelllateralraise": "db-lateral-raise",
+    "lateralraisemachine": "db-lateral-raise"
   };
 
 /* ==========================================================================
@@ -2377,6 +2471,8 @@ function normalizeState(s) {
           repRange: String(e.repRange || '8-12'),
           restSeconds: clamp(parseInt(e.restSeconds,10) || 90, 0, 900),
           formCue: String(e.formCue || ''),
+          alternatives: (Array.isArray(e.alternatives) ? e.alternatives : [])
+            .map(x => String(x)).filter(Boolean).slice(0, 4),
           type: (e.type === 'warmup' || e.type === 'cooldown') ? e.type : 'main'
         });
       }
@@ -2740,6 +2836,14 @@ function badge(m, secondary) {
   return '<span class="mbadge" style="background:' + c + ';color:' + inkFor(c) + '">' + esc(m) + '</span>';
 }
 
+/** "If the machine is taken, do this instead" — shown on the open card. */
+function altsHTML(ex) {
+  const a = (ex.alternatives || []).filter(Boolean);
+  if (!a.length) return '';
+  return '<div class="alts-line"><b>If busy</b><span>' +
+    a.map(esc).join(' · ') + '</span></div>';
+}
+
 /* ---- Exercise diagrams ---------------------------------------------- */
 function normName(s) { return String(s).toLowerCase().replace(/[^a-z0-9]/g, ''); }
 /** The schematic for an exercise, or null when we have not drawn one yet. */
@@ -2971,6 +3075,7 @@ function mainPanelHTML(ex, iso) {
       diagramBtn(ex) +
       '<button class="btn sm grow" data-act="history" data-ex="' + esc(ex.id) + '">📈 History</button>' +
     '</div>' +
+    altsHTML(ex) +
     diagramHTML(ex) +
     remarkHTML(ex, iso) +
   '</div>';
@@ -3581,6 +3686,9 @@ function exerciseFormSheet(opts) {
     '<div class="field"><label for="f-rest">Rest between sets (seconds)</label>' +
       '<input id="f-rest" type="text" inputmode="numeric" value="' + ex.restSeconds + '">' +
       '<div class="hint">Used by the rest timer when you tick a set done.</div></div>' +
+    '<div class="field"><label for="f-alts">If busy, do instead</label>' +
+      '<input id="f-alts" value="' + esc((ex.alternatives || []).join(', ')) + '" placeholder="Pec Deck, Cable Fly" autocomplete="off">' +
+      '<div class="hint">Comma separated. Shown on the card when the machine is taken.</div></div>' +
     '<div class="field"><label for="f-cue">Form cue</label>' +
       '<textarea id="f-cue" rows="2" placeholder="Elbows at 45°, don\'t flare">' + esc(ex.formCue) + '</textarea></div>';
 
@@ -3608,7 +3716,8 @@ function exerciseFormSheet(opts) {
       sets: clamp(parseInt($('#f-sets').value, 10) || 3, 1, 12),
       repRange: $('#f-reps').value.trim() || '8-12',
       restSeconds: clamp(parseInt($('#f-rest').value, 10) || 90, 0, 900),
-      formCue: $('#f-cue').value.trim()
+      formCue: $('#f-cue').value.trim(),
+      alternatives: $('#f-alts').value.split(',').map(s => s.trim()).filter(Boolean).slice(0, 4)
     };
     closeSheet();
     opts.onSave(out);
