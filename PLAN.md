@@ -17,7 +17,7 @@ _Italic entries are warm-ups and cool-downs._
 |  | _Rack-Upright Chest + Triceps Stretch_ | Squat Rack Upright + Foam Roller | mobility | 6-8 min |
 | **Tue** — Pull A - Lats, Upper Back, Rear Delts, Traps, Biceps, Forearms, Lower Back, Neck | _Rower + Scapular Activation_ | Rowing Ergometer + Cable Station - high pulley, rope | mobility | 8-9 min |
 |  | Wide-Grip Lat Pulldown | Lat Pulldown - cable, wide bar | lats | 3 × 8-12 |
-|  | Chest-Supported Row | Chest-Supported Row Machine - plate loaded | upper back | 3 × 8-12 |
+|  | Seated Cable Row - wide pronated grip | Seated Cable Row - low pulley, long straight bar | upper back | 3 × 10-15 |
 |  | Reverse Pec Deck | Pec Deck Machine - reverse setting | rear delts | 2 × 12-15 |
 |  | Dumbbell Shrug | Adjustable Dumbbells | traps | 3 × 10-15 |
 |  | Incline Dumbbell Curl | Adjustable Dumbbells + 60-degree incline bench | biceps | 3 × 10-12 |
