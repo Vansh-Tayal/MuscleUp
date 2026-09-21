@@ -36,7 +36,7 @@ _Italic entries are warm-ups and cool-downs._
 |  | Standing Calf Raise | Standing Calf Raise Machine | calves | 3 × 12-20 |
 |  | _Couch Stretch + Pigeon Hold_ | Exercise Mat + Flat Bench | mobility | 6-8 min |
 | **Thu** — Push B - Front Delts, Side Delts, Rear Delts, Upper Chest, Triceps, Abs | _Elliptical + Rotator Cuff Prep_ | Elliptical Trainer + Cable Station - low pulley, D-handle | mobility | 7-8 min |
-|  | Seated Shoulder Press | Shoulder Press Machine - selectorised | front delts | 3 × 8-12 |
+|  | Smith Machine Shoulder Press - seated | Smith Machine + upright bench set under the bar | front delts | 3 × 8-12 |
 |  | Barbell Incline Bench Press | Barbell + rack, incline bench set to 30 degrees | chest | 3 × 6-10 |
 |  | Incline Dumbbell Press | Adjustable Dumbbells + 30-degree incline bench | chest | 2 × 10-15 |
 |  | Low-to-High Cable Crossover | Cable Crossover - low pulley, D-handles | chest | 2 × 12-15 |
