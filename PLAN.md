@@ -41,13 +41,13 @@ _Italic entries are warm-ups and cool-downs._
 |  | Incline Dumbbell Press | Adjustable Dumbbells + 30-degree incline bench | chest | 2 × 10-15 |
 |  | Low-to-High Cable Crossover | Cable Crossover - low pulley, D-handles | chest | 2 × 12-15 |
 |  | Dumbbell Lateral Raise | Adjustable Dumbbells | side delts | 3 × 12-15 |
-|  | Assisted Dip | Assisted Dip/Pull-Up Machine | triceps | 3 × 8-12 |
+|  | Close-Grip Bench Press | Barbell + rack, flat bench, hands just inside shoulder width | triceps | 3 × 8-12 |
 |  | Seated Dumbbell Overhead Extension | Adjustable Dumbbells + upright bench | triceps | 2 × 10-15 |
 |  | Rope Face Pull | Cable Station - high pulley, rope | rear delts | 2 × 12-15 |
 |  | Machine Crunch | Abdominal Crunch Machine - selectorised | abs | 3 × 12-20 |
 |  | _Thoracic Opener + Cross-Body Stretch_ | Foam Roller + Exercise Mat | mobility | 6-8 min |
 | **Fri** — Pull B - Lats, Upper Back, Rear Delts, Traps, Biceps, Forearms, Neck | _Rower + Cable Face Pull Prep_ | Rowing Ergometer + Cable Station - high pulley, rope | mobility | 7-8 min |
-|  | Assisted Pull-Up | Assisted Dip/Pull-Up Machine | lats | 3 × 6-10 |
+|  | Assisted Pull-Up | Assisted Pull-Up Machine (or Pull-Up Bar with a resistance band) | lats | 3 × 6-10 |
 |  | Chest-Supported Dumbbell Row | Adjustable Dumbbells + 30-degree incline bench | upper back | 3 × 8-12 |
 |  | Seated Cable Row - close neutral grip | Seated Cable Row - low pulley, V-handle | lats | 3 × 8-12 |
 |  | Cable Rear Delt Fly | Cable Crossover - both high pulleys, D-handles, cables crossed | rear delts | 2 × 12-15 |
