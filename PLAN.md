@@ -41,7 +41,7 @@ _Italic entries are warm-ups and cool-downs._
 |  | Incline Dumbbell Press | Adjustable Dumbbells + 30-degree incline bench | chest | 2 × 10-15 |
 |  | Low-to-High Cable Crossover | Cable Crossover - low pulley, D-handles | chest | 2 × 12-15 |
 |  | Dumbbell Lateral Raise | Adjustable Dumbbells | side delts | 3 × 12-15 |
-|  | Close-Grip Bench Press | Barbell + rack, flat bench, hands just inside shoulder width | triceps | 3 × 8-12 |
+|  | EZ-Bar Skull Crusher | EZ-Curl Bar + flat bench (a straight bar or dumbbells also work) | triceps | 3 × 8-12 |
 |  | Seated Dumbbell Overhead Extension | Adjustable Dumbbells + upright bench | triceps | 2 × 10-15 |
 |  | Rope Face Pull | Cable Station - high pulley, rope | rear delts | 2 × 12-15 |
 |  | Machine Crunch | Abdominal Crunch Machine - selectorised | abs | 3 × 12-20 |

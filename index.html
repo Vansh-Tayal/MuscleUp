@@ -1340,7 +1340,7 @@ const SEED_PLAN = {
         "short": "Thu",
         "focus": "Push B - Front Delts, Side Delts, Rear Delts, Upper Chest, Triceps, Abs",
         "isRest": false,
-        "estimatedMinutes": 70,
+        "estimatedMinutes": 68,
         "exercises": [
           {
             "id": "thu-warmup-elliptical-cuff-prep",
@@ -1447,22 +1447,19 @@ const SEED_PLAN = {
             "type": "main"
           },
           {
-            "id": "thu-close-grip-bench-press",
-            "name": "Close-Grip Bench Press",
-            "machine": "Barbell + rack, flat bench, hands just inside shoulder width",
+            "id": "thu-ez-bar-skull-crusher",
+            "name": "EZ-Bar Skull Crusher",
+            "machine": "EZ-Curl Bar + flat bench (a straight bar or dumbbells also work)",
             "primaryMuscle": "triceps",
-            "secondaryMuscles": [
-              "chest",
-              "front delts"
-            ],
+            "secondaryMuscles": [],
             "sets": 3,
             "repRange": "8-12",
-            "restSeconds": 120,
-            "formCue": "Elbows tucked close to the ribs, bar to the lower chest",
+            "restSeconds": 90,
+            "formCue": "Upper arms stay vertical, lower the bar past your forehead",
             "type": "main",
             "alternatives": [
-              "Smith Machine Close-Grip Press",
-              "Rope Triceps Pushdown, add a set"
+              "Lying Dumbbell Extension, same movement",
+              "Smith Machine Close-Grip Press"
             ]
           },
           {
@@ -2176,7 +2173,11 @@ const DIAGRAMS = {
   "incline-db-curl": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of an incline dumbbell curl: bench set steep, lifter reclined with the arm hanging straight down behind the body, curling the dumbbell up.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<rect class=\"st-f\" x=\"132\" y=\"116\" width=\"46\" height=\"9\" rx=\"3\"/>\n<path class=\"st-f\" d=\"M132 124L106 62l-12 4 24 62z\"/>\n<path class=\"st\" d=\"M120 130v20M162 125v25\"/><path class=\"st\" d=\"M108 150h26M148 150h28\"/>\n<path class=\"thin\" d=\"M132 130a40 40 0 0 0-14-30\"/><text class=\"lbl\" x=\"136\" y=\"146\">60°</text>\n<circle class=\"head\" cx=\"106\" cy=\"56\" r=\"8\"/>\n<path class=\"bod\" d=\"M112 66l24 54\"/>\n<path class=\"bod\" d=\"M136 120l24 4 4 26\"/>\n<path class=\"bod\" d=\"M114 76l-4 26-2 20\"/>\n<path class=\"st\" d=\"M94 124h28\"/>\n<rect class=\"st-f\" x=\"88\" y=\"115\" width=\"8\" height=\"19\" rx=\"2\"/>\n<rect class=\"st-f\" x=\"120\" y=\"115\" width=\"8\" height=\"19\" rx=\"2\"/>\n<path class=\"arw\" d=\"M78 120q4-30 26-42\"/>\n<text class=\"lbl\" x=\"26\" y=\"96\">the arm hangs behind you</text>\n</svg>",
   "wrist-curl": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of a seated dumbbell wrist curl: lifter sits with the forearm flat along the thigh and the wrist hanging past the knee, curling the dumbbell up with the wrist only.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<rect class=\"st-f\" x=\"86\" y=\"110\" width=\"92\" height=\"9\" rx=\"3\"/>\n<path class=\"st\" d=\"M96 119v31M168 119v31\"/>\n<circle class=\"head\" cx=\"150\" cy=\"60\" r=\"8\"/>\n<path class=\"bod\" d=\"M148 70l2 40\"/>\n<path class=\"bod\" d=\"M150 110l-46 6\"/><path class=\"bod\" d=\"M104 116l-4 34\"/>\n<path class=\"bod\" d=\"M144 78l-8 22\"/>\n<path class=\"bod\" d=\"M136 100l-28 8\"/>\n<text class=\"lbl\" x=\"104\" y=\"96\">forearm flat on the thigh</text>\n<path class=\"st\" d=\"M76 118h26\"/>\n<rect class=\"st-f\" x=\"70\" y=\"109\" width=\"8\" height=\"19\" rx=\"2\"/>\n<rect class=\"st-f\" x=\"100\" y=\"109\" width=\"8\" height=\"19\" rx=\"2\"/>\n<path class=\"arw\" d=\"M62 134q6-18 22-22\"/>\n<text class=\"lbl\" x=\"42\" y=\"150\">wrist past the knee</text>\n</svg>",
   "behind-body-cable-curl": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of a behind-the-body cable curl: lifter stands ahead of a low pulley so the arm hangs behind the torso at the bottom, then curls forward and up.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M200 150V56\"/>\n<rect class=\"st-f\" x=\"190\" y=\"62\" width=\"22\" height=\"58\" rx=\"2\"/>\n<path class=\"thin\" d=\"M190 74h22M190 86h22M190 98h22M190 110h22\"/>\n<circle class=\"st\" cx=\"196\" cy=\"130\" r=\"5\"/>\n<text class=\"lbl\" x=\"188\" y=\"146\">low</text>\n<path class=\"thin\" d=\"M191 128l-56-14\"/>\n<circle class=\"head\" cx=\"96\" cy=\"52\" r=\"9\"/>\n<path class=\"bod\" d=\"M96 62v46\"/>\n<path class=\"bod\" d=\"M96 108l-10 22-2 18\"/><path class=\"bod\" d=\"M96 108l12 22 2 18\"/>\n<path class=\"bod\" d=\"M108 72l10 24 16 18\"/>\n<text class=\"lbl\" x=\"112\" y=\"64\">elbow stays put</text>\n<path class=\"arw\" d=\"M128 132q-24-6-30-28\"/>\n<text class=\"lbl\" x=\"34\" y=\"126\">stand ahead of the pulley</text>\n</svg>",
-  "rope-hammer-curl": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of a cable rope hammer curl: lifter faces a low pulley holding a rope with thumbs up, elbows pinned to the sides, curling the rope toward the shoulders.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M202 150V56\"/>\n<rect class=\"st-f\" x=\"192\" y=\"62\" width=\"22\" height=\"58\" rx=\"2\"/>\n<path class=\"thin\" d=\"M192 74h22M192 86h22M192 98h22M192 110h22\"/>\n<circle class=\"st\" cx=\"198\" cy=\"130\" r=\"5\"/>\n<path class=\"thin\" d=\"M193 128l-54-18\"/>\n<path class=\"st\" d=\"M132 102v16\"/><path class=\"st\" d=\"M126 106h12M126 116h12\"/>\n<text class=\"lbl\" x=\"118\" y=\"98\">rope</text>\n<circle class=\"head\" cx=\"100\" cy=\"52\" r=\"9\"/>\n<path class=\"bod\" d=\"M100 62v46\"/>\n<path class=\"bod\" d=\"M100 108l-10 22-2 18\"/><path class=\"bod\" d=\"M100 108l12 22 2 18\"/>\n<path class=\"bod\" d=\"M110 72l4 26 18 12\"/>\n<path class=\"arw\" d=\"M146 124q-14-24-32-28\"/>\n<text class=\"lbl\" x=\"30\" y=\"124\">thumbs up, elbows pinned to the ribs</text>\n</svg>"
+  "rope-hammer-curl": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of a cable rope hammer curl: lifter faces a low pulley holding a rope with thumbs up, elbows pinned to the sides, curling the rope toward the shoulders.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M202 150V56\"/>\n<rect class=\"st-f\" x=\"192\" y=\"62\" width=\"22\" height=\"58\" rx=\"2\"/>\n<path class=\"thin\" d=\"M192 74h22M192 86h22M192 98h22M192 110h22\"/>\n<circle class=\"st\" cx=\"198\" cy=\"130\" r=\"5\"/>\n<path class=\"thin\" d=\"M193 128l-54-18\"/>\n<path class=\"st\" d=\"M132 102v16\"/><path class=\"st\" d=\"M126 106h12M126 116h12\"/>\n<text class=\"lbl\" x=\"118\" y=\"98\">rope</text>\n<circle class=\"head\" cx=\"100\" cy=\"52\" r=\"9\"/>\n<path class=\"bod\" d=\"M100 62v46\"/>\n<path class=\"bod\" d=\"M100 108l-10 22-2 18\"/><path class=\"bod\" d=\"M100 108l12 22 2 18\"/>\n<path class=\"bod\" d=\"M110 72l4 26 18 12\"/>\n<path class=\"arw\" d=\"M146 124q-14-24-32-28\"/>\n<text class=\"lbl\" x=\"30\" y=\"124\">thumbs up, elbows pinned to the ribs</text>\n</svg>",
+  "rope-pushdown": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of a rope triceps pushdown: rope on a high pulley, lifter standing with the elbows pinned to the ribs, pushing the rope down and apart at the bottom.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M202 150V32\"/>\n<rect class=\"st-f\" x=\"192\" y=\"56\" width=\"22\" height=\"66\" rx=\"2\"/>\n<path class=\"thin\" d=\"M192 68h22M192 80h22M192 92h22M192 104h22\"/>\n<circle class=\"st\" cx=\"198\" cy=\"44\" r=\"5\"/>\n<path class=\"thin\" d=\"M193 46l-48 44\"/>\n<path class=\"st\" d=\"M145 90v22\"/><path class=\"st\" d=\"M138 96h7M138 110h7\"/>\n<text class=\"lbl\" x=\"150\" y=\"86\">rope</text>\n<circle class=\"head\" cx=\"102\" cy=\"54\" r=\"9\"/>\n<path class=\"bod\" d=\"M102 64v46\"/>\n<path class=\"bod\" d=\"M102 110l-10 22-2 18\"/><path class=\"bod\" d=\"M102 110l12 22 2 18\"/>\n<path class=\"bod\" d=\"M112 74l6 26 24 12\"/>\n<circle cx=\"118\" cy=\"100\" r=\"3.4\" fill=\"currentColor\"/>\n<text class=\"lbl\" x=\"58\" y=\"102\">elbow stays here</text>\n<path class=\"arw\" d=\"M160 76v40\"/>\n<text class=\"lbl\" x=\"150\" y=\"132\">spread the rope at the bottom</text>\n</svg>",
+  "overhead-cable-ext": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of an overhead cable triceps extension: low pulley behind the lifter, rope held behind the head, elbows pointing forward as the arms straighten overhead.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M32 150V56\"/>\n<rect class=\"st-f\" x=\"22\" y=\"62\" width=\"22\" height=\"58\" rx=\"2\"/>\n<path class=\"thin\" d=\"M22 74h22M22 86h22M22 98h22M22 110h22\"/>\n<circle class=\"st\" cx=\"38\" cy=\"130\" r=\"5\"/>\n<text class=\"lbl\" x=\"24\" y=\"146\">low</text>\n<path class=\"thin\" d=\"M43 127l52-54\"/>\n<path class=\"st\" d=\"M96 64v16\"/><path class=\"st\" d=\"M90 68h6M90 78h6\"/>\n<circle class=\"head\" cx=\"132\" cy=\"62\" r=\"9\"/>\n<path class=\"bod\" d=\"M132 72v40\"/>\n<path class=\"bod\" d=\"M132 112l-10 20-2 18\"/><path class=\"bod\" d=\"M132 112l12 20 2 18\"/>\n<path class=\"bod\" d=\"M126 80l-8-26 -20 20\"/>\n<circle cx=\"118\" cy=\"54\" r=\"3.4\" fill=\"currentColor\"/>\n<text class=\"lbl\" x=\"120\" y=\"42\">elbows point forward</text>\n<path class=\"arw\" d=\"M84 100q22-26 46-24\"/>\n<text class=\"lbl\" x=\"56\" y=\"118\">straighten overhead</text>\n</svg>",
+  "skull-crusher": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of an EZ-bar skull crusher: lifter lying on a flat bench with the upper arms held vertical, lowering the bar past the forehead and straightening the elbows.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<rect class=\"st-f\" x=\"56\" y=\"100\" width=\"130\" height=\"9\" rx=\"3\"/>\n<path class=\"st\" d=\"M68 109v41M174 109v41\"/>\n<path class=\"st\" d=\"M56 150h24M162 150h24\"/>\n<circle class=\"head\" cx=\"70\" cy=\"94\" r=\"8\"/>\n<path class=\"bod\" d=\"M80 99h54\"/><path class=\"bod\" d=\"M134 99l22 19 3 32\"/>\n<path class=\"bod\" d=\"M92 99V72\"/>\n<path class=\"bod\" d=\"M92 72l-14 8\"/>\n<circle cx=\"92\" cy=\"72\" r=\"3.4\" fill=\"currentColor\"/>\n<path class=\"thin\" d=\"M92 66V52\"/>\n<text class=\"lbl\" x=\"98\" y=\"62\">upper arm stays vertical</text>\n<path class=\"st\" d=\"M62 78h32\"/><path class=\"thin\" d=\"M70 78q4-5 8 0t8 0\"/>\n<rect class=\"st-f\" x=\"56\" y=\"70\" width=\"8\" height=\"18\" rx=\"2\"/>\n<rect class=\"st-f\" x=\"90\" y=\"70\" width=\"8\" height=\"18\" rx=\"2\"/>\n<path class=\"arw\" d=\"M56 60q22-16 40-6\"/>\n<text class=\"lbl\" x=\"40\" y=\"130\">lower past the forehead, not to the chest</text>\n</svg>",
+  "db-overhead-ext": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of a seated dumbbell overhead triceps extension: lifter on an upright bench holding one dumbbell behind the head, elbows pointing forward, straightening overhead.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<rect class=\"st-f\" x=\"140\" y=\"60\" width=\"11\" height=\"58\" rx=\"4\"/>\n<rect class=\"st-f\" x=\"104\" y=\"118\" width=\"48\" height=\"9\" rx=\"3\"/>\n<path class=\"st\" d=\"M112 127v23M146 127v23\"/>\n<circle class=\"head\" cx=\"126\" cy=\"66\" r=\"8\"/>\n<path class=\"bod\" d=\"M128 76l4 42\"/>\n<path class=\"bod\" d=\"M132 118l-26 6\"/><path class=\"bod\" d=\"M106 124l-4 26\"/>\n<path class=\"bod\" d=\"M122 84l-10-30 12 20\"/>\n<circle cx=\"112\" cy=\"54\" r=\"3.4\" fill=\"currentColor\"/>\n<text class=\"lbl\" x=\"116\" y=\"44\">elbows forward, not flared</text>\n<path class=\"st\" d=\"M124 74v22\"/>\n<rect class=\"st-f\" x=\"116\" y=\"68\" width=\"17\" height=\"8\" rx=\"2\"/>\n<rect class=\"st-f\" x=\"116\" y=\"94\" width=\"17\" height=\"8\" rx=\"2\"/>\n<path class=\"arw\" d=\"M88 94q10-30 28-36\"/>\n<text class=\"lbl\" x=\"34\" y=\"110\">behind the head, then straight up</text>\n</svg>"
 };
 const DIAGRAM_NAMES = {
     "barbellbenchpress": "bench-barbell",
@@ -2245,7 +2246,17 @@ const DIAGRAM_NAMES = {
     "cableropehammercurl": "rope-hammer-curl",
     "standingdumbbellhammercurl": "rope-hammer-curl",
     "zottmancurl": "rope-hammer-curl",
-    "reversecurlezbar": "rope-hammer-curl"
+    "reversecurlezbar": "rope-hammer-curl",
+    "ropetricepspushdown": "rope-pushdown",
+    "tricepspushdownstraightbar": "rope-pushdown",
+    "singlearmcablepushdownreversegrip": "rope-pushdown",
+    "seatedtricepsextensionmachine": "rope-pushdown",
+    "overheadcabletricepsextension": "overhead-cable-ext",
+    "cableoverheadtricepsextensionrope": "overhead-cable-ext",
+    "ezbarskullcrusher": "skull-crusher",
+    "smithmachineclosegripbenchpress": "close-grip-bench",
+    "seateddumbbelloverheadextension": "db-overhead-ext",
+    "seatedsinglearmdumbbelloverheadextension": "db-overhead-ext"
   };
 
 /* ==========================================================================
