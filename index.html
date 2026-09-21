@@ -347,6 +347,22 @@ h1,h2,h3,h4{margin:0;font-weight:700;line-height:1.25}
 .btn.block{width:100%}
 .btn:disabled{opacity:.4}
 
+/* ---- Exercise diagrams ---- */
+.dia-wrap{margin-top:11px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:8px 8px 4px}
+.dia-wrap svg{display:block;width:100%;height:auto;max-width:340px;margin:0 auto}
+.dia-cap{font-size:11px;color:var(--text-faint);text-align:center;margin:4px 0;line-height:1.45}
+.dia-cap b{color:var(--text-dim);font-weight:700}
+.dia{color:var(--text-dim)}
+.dia .bg{fill:url(#muGrid)}
+.dia .st{fill:none;stroke:var(--text-dim);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.dia .st-f{fill:var(--surface3);stroke:var(--text-dim);stroke-width:2.2;stroke-linejoin:round}
+.dia .thin{fill:none;stroke:var(--text-dim);stroke-width:1.4;stroke-linecap:round}
+.dia .floor{stroke:var(--text-faint);stroke-width:2;stroke-linecap:round}
+.dia .bod{fill:none;stroke:var(--accent);stroke-width:5.4;stroke-linecap:round;stroke-linejoin:round}
+.dia .head{fill:var(--accent)}
+.dia .arw{fill:none;stroke:var(--accent);stroke-width:2.2;stroke-linecap:round;marker-end:url(#muArrow);marker-start:url(#muArrow)}
+.dia .lbl{fill:var(--text-faint);font-family:var(--mono);font-size:9px;font-weight:600}
+
 /* ========================================================================
    BOTTOM NAV
    ======================================================================== */
@@ -575,6 +591,17 @@ h1,h2,h3,h4{margin:0;font-weight:700;line-height:1.25}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="muGrid" width="12" height="12" patternUnits="userSpaceOnUse">
+      <path d="M12 0H0V12" fill="none" stroke="var(--border)" stroke-width="1"/>
+    </pattern>
+    <marker id="muArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0 .5 9 5 0 9.5z" fill="var(--accent)"/>
+    </marker>
+  </defs>
+</svg>
+
 <div id="app">
 
   <!-- ================= TOP BAR ================= -->
@@ -806,7 +833,7 @@ h1,h2,h3,h4{margin:0;font-weight:700;line-height:1.25}
       on the Plan tab to pull it in without losing any logged sessions.
    ========================================================================== */
 const SEED_PLAN = {
-    "notes": "SET COUNTING: where an exercise name says \"per side\", the sets number is the TOTAL across both sides - \"2 sets per side\" means sets 4, i.e. two sets left and two sets right, alternating. Every set count and time estimate in this plan already assumes that reading. Weeks 1-2 are a ramp-in, not a test: drop one set from the three HIGHEST-set exercises of each day (never below 2 sets), which lands every day at 18-19 working sets; pick loads you could stop 4-5 reps short of failure on, and finish every session feeling you could repeat it. From week 3 run the full 21-22 sets shown here and never add more, because the cap is what makes six days a week survivable. Progression from week 3 is double progression: hold the load until you hit the TOP of the rep range on every set with 2-3 reps still in reserve, then take the smallest jump available - 2.5 kg on lower-body barbell lifts, 1-2.5 kg on upper-body barbell lifts, one pin on a machine, one notch per dumbbell - and rebuild through the range; on machines and isolation work add reps before you add load. Never train a set to failure: every cue that says \"stop 3 reps short\" means exactly that, and the same 2-3 reps in reserve applies to every other exercise in the plan. The three barbell entries (Mon bench, Wed squat, Sat RDL) are deliberately labelled skill work and are programmed FIRST on their day so you learn them fresh: start with the empty bar, rehearse ten empty-bar reps in the warm-up, and expect to progress them slowly for the first two months. Before you load a single plate on the bench, set the safety pins just BELOW the height where the empty bar touches your chest, lie down, press the empty bar, then lower it onto the pins once and check they catch the bar clear of your ribcage - do that test every session. On the squat set the pins just below your own bottom position; on the RDL the J-hooks sit at mid-thigh so you can un-rack standing and the bar can travel all the way down. Substitutions: if the hip thrust machine is taken use the Glute Drive machine, or a Smith machine hip thrust with a barbell pad; if a cable station is busy, wait rather than swapping in an exercise you have not been shown. Log weight, reps AND reps left in the tank for every set, or progression is invisible. On unilateral work (split squat, cable lateral raise, woodchop, cable hip abduction and the Sunday drills) always start the weaker side and cap the stronger side at the same reps. Keep the prehab-flavoured items - back extension, adduction, abduction, neck, face pull, rear delt work - permanently light. Sunday needs no gym: a mat, a wall and your own bodyweight. If a lift sits at the same weight and reps for three sessions running, take one easy week at half the sets and the same loads, then resume; independently of that, deload every 6-8 weeks by running the same exercises on the same days at half the sets with nothing above a 5/10 effort. Sharp joint pain (not muscle soreness) two sessions in a row means cut that exercise's load by 20 percent and shorten the range rather than skipping the day. Any day you skip is simply skipped - move on to the next day in order, never stack two sessions into one.",
+    "notes": "SET COUNTING: where an exercise name says \"per side\", the sets number is the TOTAL across both sides - \"2 sets per side\" means sets 4, i.e. two sets left and two sets right, alternating. Every set count and time estimate in this plan already assumes that reading. Weeks 1-2 are a ramp-in, not a test: drop one set from the three HIGHEST-set exercises of each day (never below 2 sets), which lands every day at 18-19 working sets; pick loads you could stop 4-5 reps short of failure on, and finish every session feeling you could repeat it. From week 3 run the full 21-22 sets shown here and never add more, because the cap is what makes six days a week survivable. Progression from week 3 is double progression: hold the load until you hit the TOP of the rep range on every set with 2-3 reps still in reserve, then take the smallest jump available - 2.5 kg on lower-body barbell lifts, 1-2.5 kg on upper-body barbell lifts, one pin on a machine, one notch per dumbbell - and rebuild through the range; on machines and isolation work add reps before you add load. Never train a set to failure: every cue that says \"stop 2 reps short\" means exactly that, and the same 2-3 reps in reserve applies to every other exercise in the plan. The four barbell lifts (Mon bench, Thu incline bench, Wed squat, Sat RDL) are programmed FIRST on their day so you hit them fresh. Rehearse the pattern with the empty bar in the warm-up, then work up. Use your spotter on the two bench variations. Before you load a single plate on the bench, set the safety pins just BELOW the height where the empty bar touches your chest, lie down, press the empty bar, then lower it onto the pins once and check they catch the bar clear of your ribcage - do that test every session. On the squat set the pins just below your own bottom position; on the RDL the J-hooks sit at mid-thigh so you can un-rack standing and the bar can travel all the way down. Substitutions: if the hip thrust machine is taken use the Glute Drive machine, or a Smith machine hip thrust with a barbell pad; if a cable station is busy, wait rather than swapping in an exercise you have not been shown. Log weight, reps AND reps left in the tank for every set, or progression is invisible. On unilateral work (split squat, cable lateral raise, woodchop, cable hip abduction and the Sunday drills) always start the weaker side and cap the stronger side at the same reps. Keep the prehab-flavoured items - back extension, adduction, abduction, neck, face pull, rear delt work - permanently light. Sunday needs no gym: a mat, a wall and your own bodyweight. If a lift sits at the same weight and reps for three sessions running, take one easy week at half the sets and the same loads, then resume; independently of that, deload every 6-8 weeks by running the same exercises on the same days at half the sets with nothing above a 5/10 effort. Sharp joint pain (not muscle soreness) two sessions in a row means cut that exercise's load by 20 percent and shorten the range rather than skipping the day. Any day you skip is simply skipped - move on to the next day in order, never stack two sessions into one.",
     "days": [
       {
         "id": "mon",
@@ -814,7 +841,7 @@ const SEED_PLAN = {
         "short": "Mon",
         "focus": "Push A - Chest, Front Delts, Side Delts, Triceps, Abs",
         "isRest": false,
-        "estimatedMinutes": 61,
+        "estimatedMinutes": 66,
         "exercises": [
           {
             "id": "mon-warmup-incline-walk-cuff-bar-prep",
@@ -833,7 +860,7 @@ const SEED_PLAN = {
           },
           {
             "id": "mon-barbell-bench-press-skill",
-            "name": "Light Barbell Bench Press (skill work)",
+            "name": "Barbell Bench Press",
             "machine": "Barbell + rack, flat bench, safety pins set just BELOW chest touch height",
             "primaryMuscle": "chest",
             "secondaryMuscles": [
@@ -842,23 +869,23 @@ const SEED_PLAN = {
             ],
             "sets": 3,
             "repRange": "6-10",
-            "restSeconds": 120,
-            "formCue": "Pins just under the chest, elbows 45 degrees, stop 3 reps short",
+            "restSeconds": 150,
+            "formCue": "Elbows 45 degrees, touch mid-chest, stop 2 reps short",
             "type": "main"
           },
           {
-            "id": "mon-chest-press-machine",
-            "name": "Seated Chest Press - flat, neutral grip",
-            "machine": "Chest Press Machine - selectorised, neutral handles",
+            "id": "mon-dumbbell-bench-press",
+            "name": "Dumbbell Bench Press - flat",
+            "machine": "Adjustable Dumbbells + flat bench",
             "primaryMuscle": "chest",
             "secondaryMuscles": [
-              "front delts",
-              "triceps"
+              "triceps",
+              "front delts"
             ],
-            "sets": 2,
+            "sets": 3,
             "repRange": "8-12",
-            "restSeconds": 90,
-            "formCue": "Set the seat so the handles sit level with your mid-chest",
+            "restSeconds": 120,
+            "formCue": "Lower until the elbows sit just below the chest, 2 reps short",
             "type": "main"
           },
           {
@@ -1122,7 +1149,7 @@ const SEED_PLAN = {
         "short": "Wed",
         "focus": "Legs A - Quads, Glutes, Hamstrings, Adductors, Abductors, Calves",
         "isRest": false,
-        "estimatedMinutes": 61,
+        "estimatedMinutes": 63,
         "exercises": [
           {
             "id": "wed-warmup-bike-squat-bar-prep",
@@ -1141,7 +1168,7 @@ const SEED_PLAN = {
           },
           {
             "id": "wed-barbell-back-squat-skill",
-            "name": "Light Barbell Back Squat (skill work)",
+            "name": "Barbell Back Squat",
             "machine": "Barbell + rack, safety pins set just below your bottom position",
             "primaryMuscle": "quads",
             "secondaryMuscles": [
@@ -1151,8 +1178,8 @@ const SEED_PLAN = {
             ],
             "sets": 3,
             "repRange": "8-10",
-            "restSeconds": 120,
-            "formCue": "Brace, sit between the heels, knees out, stop 3 reps short",
+            "restSeconds": 150,
+            "formCue": "Brace, sit between the heels, knees out, stop 2 reps short",
             "type": "main"
           },
           {
@@ -1273,7 +1300,7 @@ const SEED_PLAN = {
         "short": "Thu",
         "focus": "Push B - Front Delts, Side Delts, Rear Delts, Upper Chest, Triceps, Abs",
         "isRest": false,
-        "estimatedMinutes": 61,
+        "estimatedMinutes": 68,
         "exercises": [
           {
             "id": "thu-warmup-elliptical-cuff-prep",
@@ -1306,6 +1333,21 @@ const SEED_PLAN = {
             "type": "main"
           },
           {
+            "id": "thu-barbell-incline-bench-press",
+            "name": "Barbell Incline Bench Press",
+            "machine": "Barbell + rack, incline bench set to 30 degrees",
+            "primaryMuscle": "chest",
+            "secondaryMuscles": [
+              "front delts",
+              "triceps"
+            ],
+            "sets": 3,
+            "repRange": "6-10",
+            "restSeconds": 150,
+            "formCue": "Bar to the upper chest, shoulder blades pinned, 2 reps short",
+            "type": "main"
+          },
+          {
             "id": "thu-incline-dumbbell-press",
             "name": "Incline Dumbbell Press",
             "machine": "Adjustable Dumbbells + 30-degree incline bench",
@@ -1314,10 +1356,10 @@ const SEED_PLAN = {
               "front delts",
               "triceps"
             ],
-            "sets": 3,
-            "repRange": "8-12",
-            "restSeconds": 120,
-            "formCue": "Stretch the chest deep at the bottom, stop 3 reps short",
+            "sets": 2,
+            "repRange": "10-15",
+            "restSeconds": 90,
+            "formCue": "Go deeper than the barbell allows, stop 2 reps short",
             "type": "main"
           },
           {
@@ -1604,7 +1646,7 @@ const SEED_PLAN = {
           },
           {
             "id": "sat-barbell-romanian-deadlift-skill",
-            "name": "Light Barbell Romanian Deadlift (skill work)",
+            "name": "Barbell Romanian Deadlift",
             "machine": "Barbell + rack, J-hooks set at mid-thigh height to un-rack",
             "primaryMuscle": "hamstrings",
             "secondaryMuscles": [
@@ -1614,7 +1656,7 @@ const SEED_PLAN = {
             "sets": 3,
             "repRange": "8-10",
             "restSeconds": 150,
-            "formCue": "Hips back, bar on the thighs, stop 3 reps short of failure",
+            "formCue": "Hips back, bar grazes the thighs, stop 2 reps short",
             "type": "main"
           },
           {
@@ -2018,6 +2060,36 @@ const LIBRARY_BY_ID = Object.create(null);
 LIBRARY.forEach(function (e) { LIBRARY_BY_ID[e.id] = e; });
 
 /* ==========================================================================
+   2b. EXERCISE DIAGRAMS — the schematic behind the Diagram button on each
+       exercise card. Grey is the machine, orange is you and the rep path.
+       DIAGRAM_NAMES maps a normalised exercise name onto a drawing, so
+       renaming or swapping an exercise keeps its picture.
+   ========================================================================== */
+const DIAGRAMS = {
+  "bench-barbell": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of a flat bench in a rack, lifter pressing a barbell straight up, safety pins set just below chest height.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M50 150V52\"/><path class=\"st\" d=\"M36 150h30\"/>\n<path class=\"st\" d=\"M50 66h13v-7\"/>\n<path class=\"st\" d=\"M50 92h22\"/><circle cx=\"72\" cy=\"92\" r=\"3\" fill=\"currentColor\"/>\n<text class=\"lbl\" x=\"78\" y=\"95\">pins</text>\n<rect class=\"st-f\" x=\"58\" y=\"100\" width=\"130\" height=\"9\" rx=\"3\"/>\n<path class=\"st\" d=\"M68 109v41M178 109v41\"/>\n<circle class=\"head\" cx=\"72\" cy=\"94\" r=\"8\"/>\n<path class=\"bod\" d=\"M82 99h54\"/><path class=\"bod\" d=\"M136 99l22 19 3 32\"/>\n<path class=\"bod\" d=\"M92 99l4-22 6-14\"/>\n<path class=\"st\" d=\"M44 63h112\"/>\n<rect class=\"st-f\" x=\"40\" y=\"48\" width=\"9\" height=\"30\" rx=\"2\"/>\n<rect class=\"st-f\" x=\"150\" y=\"48\" width=\"9\" height=\"30\" rx=\"2\"/>\n<path class=\"arw\" d=\"M180 68v22\"/>\n</svg>",
+  "bench-dumbbell": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of a flat bench, lifter lying down pressing two dumbbells straight up. No rack needed.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<rect class=\"st-f\" x=\"52\" y=\"100\" width=\"134\" height=\"9\" rx=\"3\"/>\n<path class=\"st\" d=\"M64 109v41M174 109v41\"/>\n<path class=\"st\" d=\"M52 150h24M162 150h24\"/>\n<circle class=\"head\" cx=\"68\" cy=\"94\" r=\"8\"/>\n<path class=\"bod\" d=\"M78 99h54\"/><path class=\"bod\" d=\"M132 99l24 19 3 32\"/>\n<path class=\"bod\" d=\"M90 99l5-22 7-14\"/>\n<path class=\"st\" d=\"M88 60h28\"/>\n<rect class=\"st-f\" x=\"82\" y=\"51\" width=\"8\" height=\"19\" rx=\"2\"/>\n<rect class=\"st-f\" x=\"114\" y=\"51\" width=\"8\" height=\"19\" rx=\"2\"/>\n<text class=\"lbl\" x=\"130\" y=\"58\">free path</text>\n<path class=\"arw\" d=\"M178 66v24\"/>\n</svg>",
+  "pec-deck": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Front view of a pec deck: two vertical arm pads pivoting from a central post, lifter seated sweeping both arms inward.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M120 60v90\"/><path class=\"st\" d=\"M92 150h56\"/>\n<circle cx=\"107\" cy=\"58\" r=\"4\" fill=\"currentColor\"/><circle cx=\"133\" cy=\"58\" r=\"4\" fill=\"currentColor\"/>\n<path class=\"st\" d=\"M107 58L68 72M133 58l39 14\"/>\n<rect class=\"st-f\" x=\"58\" y=\"66\" width=\"11\" height=\"34\" rx=\"5\"/>\n<rect class=\"st-f\" x=\"171\" y=\"66\" width=\"11\" height=\"34\" rx=\"5\"/>\n<rect class=\"st-f\" x=\"104\" y=\"116\" width=\"32\" height=\"9\" rx=\"3\"/>\n<rect class=\"st-f\" x=\"108\" y=\"78\" width=\"24\" height=\"40\" rx=\"3\"/>\n<circle class=\"head\" cx=\"120\" cy=\"72\" r=\"8.5\"/>\n<path class=\"bod\" d=\"M120 82v34\"/>\n<path class=\"bod\" d=\"M104 92l-22-3-14 2\"/><path class=\"bod\" d=\"M136 92l22-3 14 2\"/>\n<path class=\"arw\" d=\"M74 116q22 12 40 5\"/><path class=\"arw\" d=\"M166 116q-22 12-40 5\"/>\n</svg>",
+  "incline-barbell": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of an incline bench set to 30 degrees inside a rack, lifter pressing a barbell to the upper chest.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M62 150V50\"/><path class=\"st\" d=\"M48 150h28\"/>\n<path class=\"st\" d=\"M62 64h12v-7\"/>\n<rect class=\"st-f\" x=\"140\" y=\"116\" width=\"52\" height=\"9\" rx=\"3\"/>\n<path class=\"st-f\" d=\"M138 124L94 92l-8 11 46 33z\"/>\n<path class=\"st\" d=\"M98 130v20M168 125v25\"/><path class=\"st\" d=\"M86 150h28M154 150h28\"/>\n<path class=\"thin\" d=\"M138 132a34 34 0 0 0-22-26\"/><text class=\"lbl\" x=\"152\" y=\"143\">30°</text>\n<circle class=\"head\" cx=\"104\" cy=\"88\" r=\"8\"/>\n<path class=\"bod\" d=\"M112 96l38 25\"/><path class=\"bod\" d=\"M150 121l25 4 5 25\"/>\n<path class=\"bod\" d=\"M117 100l10-22 7-13\"/>\n<path class=\"st\" d=\"M70 58h108\"/>\n<rect class=\"st-f\" x=\"66\" y=\"44\" width=\"9\" height=\"28\" rx=\"2\"/>\n<rect class=\"st-f\" x=\"172\" y=\"44\" width=\"9\" height=\"28\" rx=\"2\"/>\n<path class=\"arw\" d=\"M196 66l-12 24\"/>\n</svg>",
+  "incline-dumbbell": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of an adjustable bench set to 30 degrees, lifter reclined pressing two dumbbells upward.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<rect class=\"st-f\" x=\"140\" y=\"116\" width=\"52\" height=\"9\" rx=\"3\"/>\n<path class=\"st-f\" d=\"M138 124L92 90l-8 11 46 34z\"/>\n<path class=\"st\" d=\"M96 128v22M168 125v25\"/><path class=\"st\" d=\"M84 150h30M154 150h30\"/>\n<path class=\"thin\" d=\"M138 132a34 34 0 0 0-22-26\"/><text class=\"lbl\" x=\"150\" y=\"143\">30°</text>\n<circle class=\"head\" cx=\"102\" cy=\"86\" r=\"8\"/>\n<path class=\"bod\" d=\"M110 94l38 26\"/><path class=\"bod\" d=\"M148 120l26 4 5 26\"/>\n<path class=\"bod\" d=\"M115 98l10-22 8-14\"/>\n<path class=\"st\" d=\"M120 60h30\"/>\n<rect class=\"st-f\" x=\"113\" y=\"50\" width=\"9\" height=\"21\" rx=\"2\"/>\n<rect class=\"st-f\" x=\"148\" y=\"50\" width=\"9\" height=\"21\" rx=\"2\"/>\n<path class=\"arw\" d=\"M178 66l-14 26\"/>\n</svg>",
+  "crossover-low": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Front view of a cable crossover with both pulleys set low, lifter in a split stance sweeping both handles up to chin height.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M30 150V34M210 150V34\"/><path class=\"st\" d=\"M30 34h180\"/>\n<rect class=\"st-f\" x=\"20\" y=\"62\" width=\"22\" height=\"64\" rx=\"2\"/>\n<rect class=\"st-f\" x=\"198\" y=\"62\" width=\"22\" height=\"64\" rx=\"2\"/>\n<path class=\"thin\" d=\"M20 74h22M20 86h22M20 98h22M20 110h22\"/>\n<path class=\"thin\" d=\"M198 74h22M198 86h22M198 98h22M198 110h22\"/>\n<circle class=\"st\" cx=\"36\" cy=\"132\" r=\"5\"/><circle class=\"st\" cx=\"204\" cy=\"132\" r=\"5\"/>\n<text class=\"lbl\" x=\"28\" y=\"147\">low</text><text class=\"lbl\" x=\"196\" y=\"147\">low</text>\n<path class=\"thin\" d=\"M41 130L88 92M199 130l-47-38\"/>\n<circle class=\"head\" cx=\"120\" cy=\"66\" r=\"8.5\"/>\n<path class=\"bod\" d=\"M120 76v36\"/>\n<path class=\"bod\" d=\"M120 112l-14 20-4 18\"/><path class=\"bod\" d=\"M120 112l16 18 6 20\"/>\n<path class=\"bod\" d=\"M106 88l-12 4-6 0\"/><path class=\"bod\" d=\"M134 88l12 4 6 0\"/>\n<path class=\"arw\" d=\"M78 120q4-26 34-40\"/><path class=\"arw\" d=\"M162 120q-4-26-34-40\"/>\n</svg>"
+};
+const DIAGRAM_NAMES = {
+    "barbellbenchpress": "bench-barbell",
+    "barbellbenchpressflat": "bench-barbell",
+    "lightbarbellbenchpressskillwork": "bench-barbell",
+    "dumbbellbenchpress": "bench-dumbbell",
+    "dumbbellbenchpressflat": "bench-dumbbell",
+    "pecdeckfly": "pec-deck",
+    "pecdeckmachinefly": "pec-deck",
+    "barbellinclinebenchpress": "incline-barbell",
+    "barbellinclinebenchpress30degrees": "incline-barbell",
+    "inclinedumbbellpress": "incline-dumbbell",
+    "inclinedumbbellpress30degrees": "incline-dumbbell",
+    "lowtohighcablecrossover": "crossover-low",
+    "lowtohighcablefly": "crossover-low"
+  };
+
+/* ==========================================================================
    3. CONSTANTS
    ========================================================================== */
 const STORE_KEY = 'gymTracker.v1';
@@ -2338,6 +2410,7 @@ const ui = {
   selectedDay: null,      // day id shown on the Train screen
   viewDate: null,         // ISO date the Train screen is logging to
   openEx: {},             // exId -> bool
+  openDia: {},            // exId -> bool, is the diagram panel open
   histFilter: '',
   pickerCtx: null
 };
@@ -2627,6 +2700,30 @@ function badge(m, secondary) {
   return '<span class="mbadge" style="background:' + c + ';color:' + inkFor(c) + '">' + esc(m) + '</span>';
 }
 
+/* ---- Exercise diagrams ---------------------------------------------- */
+function normName(s) { return String(s).toLowerCase().replace(/[^a-z0-9]/g, ''); }
+/** The schematic for an exercise, or null when we have not drawn one yet. */
+function diagramFor(ex) {
+  const key = DIAGRAM_NAMES[normName(ex.name)];
+  return (key && DIAGRAMS[key]) || null;
+}
+function diagramHTML(ex) {
+  const svg = diagramFor(ex);
+  if (!svg) return '';
+  return '<div class="dia-wrap" id="dia-' + esc(ex.id) + '"' + (ui.openDia[ex.id] ? '' : ' hidden') + '>' +
+    svg +
+    '<p class="dia-cap"><b>' + esc(ex.machine) + '</b><br>' +
+    'Grey is the machine · orange is you and the path of the rep</p></div>';
+}
+function diagramBtn(ex) {
+  if (!diagramFor(ex)) return '';
+  return '<button class="btn sm" data-act="diagram" data-ex="' + esc(ex.id) + '" ' +
+    'aria-expanded="' + (ui.openDia[ex.id] ? 'true' : 'false') + '">' +
+    '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+    'stroke-width="2" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/>' +
+    '<path d="M3 15l5-4 4 3 3-2 6 4"/></svg> Diagram</button>';
+}
+
 /** Has the user touched this entry at all (including a ticked warm-up)? */
 function entryTouched(en) {
   return !!(en && (en.remark || en.sets.some(s => s.done || s.w != null || s.r != null)));
@@ -2796,7 +2893,9 @@ function simplePanelHTML(ex, iso) {
         (done ? '✓ Completed' : 'Mark as done') + '</button>' +
       '<p class="note" style="margin:9px 0 0;text-align:center">' +
         'Not counted in your volume — it is prep and recovery, not training load.</p>' +
+      (diagramBtn(ex) ? '<div class="ex-actions">' + diagramBtn(ex) + '</div>' : '') +
     '</div>' +
+    diagramHTML(ex) +
     remarkHTML(ex, iso) +
   '</div>';
 }
@@ -2829,8 +2928,10 @@ function mainPanelHTML(ex, iso) {
     '<div class="ex-actions">' +
       '<button class="btn sm" data-act="add-set" data-ex="' + esc(ex.id) + '">+ Set</button>' +
       '<button class="btn sm" data-act="del-set" data-ex="' + esc(ex.id) + '"' + (en.sets.length <= 1 ? ' disabled' : '') + '>− Set</button>' +
+      diagramBtn(ex) +
       '<button class="btn sm grow" data-act="history" data-ex="' + esc(ex.id) + '">📈 History</button>' +
     '</div>' +
+    diagramHTML(ex) +
     remarkHTML(ex, iso) +
   '</div>';
 }
@@ -3842,6 +3943,12 @@ function wire() {
     else if (act === 'del-set') removeSet(exId);
     else if (act === 'simple-done') markSimpleDone(exId);
     else if (act === 'history') historySheet(exId);
+    else if (act === 'diagram') {
+      ui.openDia[exId] = !ui.openDia[exId];
+      const w = document.getElementById('dia-' + exId);
+      if (w) w.hidden = !ui.openDia[exId];
+      btn.setAttribute('aria-expanded', ui.openDia[exId] ? 'true' : 'false');
+    }
   });
 
   /* typing in a weight/reps box */

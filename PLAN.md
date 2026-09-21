@@ -6,8 +6,8 @@ _Italic entries are warm-ups and cool-downs._
 | Day | Exercise | Machine | Primary | Sets × Reps |
 |---|---|---|---|---|
 | **Mon** — Push A - Chest, Front Delts, Side Delts, Triceps, Abs | _Incline Walk + Cuff & Empty-Bar Prep_ | Treadmill + Cable Station - low pulley, D-handle + Empty Barbell | mobility | 7-8 min |
-|  | Light Barbell Bench Press (skill work) | Barbell + rack, flat bench, safety pins set just BELOW chest touch height | chest | 3 × 6-10 |
-|  | Seated Chest Press - flat, neutral grip | Chest Press Machine - selectorised, neutral handles | chest | 2 × 8-12 |
+|  | Barbell Bench Press | Barbell + rack, flat bench, safety pins set just BELOW chest touch height | chest | 3 × 6-10 |
+|  | Dumbbell Bench Press - flat | Adjustable Dumbbells + flat bench | chest | 3 × 8-12 |
 |  | Pec Deck Fly | Pec Deck Machine | chest | 2 × 10-15 |
 |  | Seated Dumbbell Shoulder Press | Adjustable Dumbbells + upright bench | front delts | 3 × 8-12 |
 |  | Cable Lateral Raise (2 sets per side) | Cable Station - low pulley, D-handle | side delts | 4 × 12-15 |
@@ -26,7 +26,7 @@ _Italic entries are warm-ups and cool-downs._
 |  | Seated Dumbbell Wrist Curl | Adjustable Dumbbells + flat bench | forearms | 2 × 15-20 |
 |  | _Hanging Lat Stretch + Child's Pose_ | Pull-Up Bar + Exercise Mat | mobility | 6-8 min |
 | **Wed** — Legs A - Quads, Glutes, Hamstrings, Adductors, Abductors, Calves | _Bike + Squat & Empty-Bar Prep_ | Upright Exercise Bike + Empty Barbell | mobility | 7-8 min |
-|  | Light Barbell Back Squat (skill work) | Barbell + rack, safety pins set just below your bottom position | quads | 3 × 8-10 |
+|  | Barbell Back Squat | Barbell + rack, safety pins set just below your bottom position | quads | 3 × 8-10 |
 |  | 45-Degree Leg Press | 45-Degree Leg Press Machine | quads | 3 × 10-12 |
 |  | Machine Hip Thrust | Hip Thrust Machine - plate loaded | glutes | 3 × 8-12 |
 |  | Leg Extension | Leg Extension Machine - selectorised | quads | 2 × 12-15 |
@@ -37,7 +37,8 @@ _Italic entries are warm-ups and cool-downs._
 |  | _Couch Stretch + Pigeon Hold_ | Exercise Mat + Flat Bench | mobility | 6-8 min |
 | **Thu** — Push B - Front Delts, Side Delts, Rear Delts, Upper Chest, Triceps, Abs | _Elliptical + Rotator Cuff Prep_ | Elliptical Trainer + Cable Station - low pulley, D-handle | mobility | 7-8 min |
 |  | Seated Shoulder Press | Shoulder Press Machine - selectorised | front delts | 3 × 8-12 |
-|  | Incline Dumbbell Press | Adjustable Dumbbells + 30-degree incline bench | chest | 3 × 8-12 |
+|  | Barbell Incline Bench Press | Barbell + rack, incline bench set to 30 degrees | chest | 3 × 6-10 |
+|  | Incline Dumbbell Press | Adjustable Dumbbells + 30-degree incline bench | chest | 2 × 10-15 |
 |  | Low-to-High Cable Crossover | Cable Crossover - low pulley, D-handles | chest | 2 × 12-15 |
 |  | Dumbbell Lateral Raise | Adjustable Dumbbells | side delts | 3 × 12-15 |
 |  | Assisted Dip | Assisted Dip/Pull-Up Machine | triceps | 3 × 8-12 |
@@ -56,7 +57,7 @@ _Italic entries are warm-ups and cool-downs._
 |  | Neck Extension - hand resistance | Flat Bench + own hand resistance | neck | 2 × 12-15 |
 |  | _Kneeling Lat Stretch + Forearm Stretch_ | Flat Bench + Exercise Mat | mobility | 6-8 min |
 | **Sat** — Legs B - Hamstrings, Glutes, Quads, Calves, Abs, Obliques, Abductors | _Bike + Hip Hinge & Empty-Bar Drill_ | Upright Exercise Bike + Empty Barbell | mobility | 7-8 min |
-|  | Light Barbell Romanian Deadlift (skill work) | Barbell + rack, J-hooks set at mid-thigh height to un-rack | hamstrings | 3 × 8-10 |
+|  | Barbell Romanian Deadlift | Barbell + rack, J-hooks set at mid-thigh height to un-rack | hamstrings | 3 × 8-10 |
 |  | Hack Squat | Hack Squat Machine - plate loaded | quads | 3 × 8-12 |
 |  | Dumbbell Split Squat - both feet on the floor (2 sets per side) | Adjustable Dumbbells + squat rack upright to hold for balance | glutes | 4 × 8-12 |
 |  | Lying Leg Curl | Lying Leg Curl Machine - selectorised | hamstrings | 3 × 10-15 |
