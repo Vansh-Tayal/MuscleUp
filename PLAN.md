@@ -1,6 +1,8 @@
 # The Program
 
-Six training days: Push / Pull / Legs, run twice a week, plus a Sunday mobility session you can do at home.
+Workouts run as a **cycle**, not a fixed weekday timetable — the cycle advances one step per training day, so taking a day off pushes the rest forward instead of skipping a session.
+
+Monday is the default rest day. The mobility session is what shows on rest days.
 _Italic entries are warm-ups and cool-downs._
 
 | Day | Exercise | Machine | Primary | Sets × Reps |

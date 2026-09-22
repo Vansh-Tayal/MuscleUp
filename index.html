@@ -144,6 +144,8 @@ h1,h2,h3,h4{margin:0;font-weight:700;line-height:1.25}
   color:var(--text-dim);position:relative;min-height:var(--tap);justify-content:center;
 }
 .daytab .d-name{font-size:12px;font-weight:800;letter-spacing:.3px}
+.daytab .d-tag{font-size:8.5px;font-weight:700;letter-spacing:.2px;opacity:.72;
+  max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .daytab .d-dot{width:6px;height:6px;border-radius:50%;background:var(--border-strong)}
 .daytab .d-dot.part{background:var(--warn)}
 .daytab .d-dot.full{background:var(--ok)}
@@ -346,6 +348,32 @@ h1,h2,h3,h4{margin:0;font-weight:700;line-height:1.25}
 .btn.sm{min-height:34px;font-size:12px;padding:0 10px;border-radius:9px}
 .btn.block{width:100%}
 .btn:disabled{opacity:.4}
+
+/* ---- Food / protein ---- */
+.food-row{
+  display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:11px;align-items:center;
+  width:100%;text-align:left;padding:11px 12px;min-height:var(--tap);
+  background:var(--surface);border:1px solid var(--border);border-radius:12px;margin-bottom:7px;
+}
+.food-row:active{background:var(--surface2)}
+.food-row.on{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 9%,var(--surface))}
+.food-box{
+  width:26px;height:26px;border-radius:8px;display:grid;place-items:center;flex:none;
+  background:var(--surface3);border:1.5px solid var(--border-strong);
+  color:transparent;font-size:15px;font-weight:900;
+}
+.food-row.on .food-box{background:var(--ok);border-color:var(--ok);color:#04140A}
+.food-name{font-size:14.5px;font-weight:600;word-break:break-word}
+.food-g{font-size:13px;font-weight:800;color:var(--text-dim);font-variant-numeric:tabular-nums;white-space:nowrap}
+.food-row.on .food-g{color:var(--ok)}
+.protein-top{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:14px;margin-bottom:12px;
+}
+.protein-num{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.protein-num b{font-size:34px;font-weight:900;letter-spacing:-1.2px;font-variant-numeric:tabular-nums;line-height:1}
+.protein-num span{font-size:13px;color:var(--text-faint)}
+.protein-num .goal{font-size:15px;font-weight:700;color:var(--text-dim)}
 
 /* ---- "this machine is busy" alternatives ---- */
 .alts-line{
@@ -695,6 +723,23 @@ h1,h2,h3,h4{margin:0;font-weight:700;line-height:1.25}
     </div>
   </main>
 
+  <!-- ================= FOOD ================= -->
+  <main class="screen" id="screen-food">
+    <div id="proteinTop"></div>
+    <div class="section">
+      <div class="section-head">
+        <h3>What you ate</h3>
+        <span class="sh-note">tap to tick</span>
+      </div>
+      <div id="foodList"></div>
+      <button class="btn block primary" id="btnAddFood" style="margin-top:4px">+ Add an item</button>
+    </div>
+    <div class="section">
+      <div class="section-head"><h3>Last 14 days</h3></div>
+      <div class="card" id="proteinHistory"></div>
+    </div>
+  </main>
+
   <!-- ================= DATA ================= -->
   <main class="screen" id="screen-data">
     <div class="section">
@@ -732,10 +777,33 @@ h1,h2,h3,h4{margin:0;font-weight:700;line-height:1.25}
           <label for="setPrefill">Pre-fill weight &amp; reps from last time</label>
           <span class="switch"><input type="checkbox" id="setPrefill" checked><i></i></span>
         </div>
-        <div class="rest-toggle" style="border-bottom:none">
+        <div class="rest-toggle">
           <label for="setAutoExpand">Auto-open the next unfinished exercise</label>
           <span class="switch"><input type="checkbox" id="setAutoExpand" checked><i></i></span>
         </div>
+        <div class="rest-toggle" style="border-bottom:none">
+          <label for="setAutoToday">Jump to today when the app opens</label>
+          <span class="switch"><input type="checkbox" id="setAutoToday" checked><i></i></span>
+        </div>
+      </div>
+      <p class="note" style="margin:8px 2px 0">
+        With this off the app reopens on whichever day you were last looking at.
+        Every day keeps its own sets and history either way.
+      </p>
+      <div class="field" style="margin-top:12px">
+        <label for="setRestWeekday">Default rest day</label>
+        <select id="setRestWeekday">
+          <option value="mon">Monday</option><option value="tue">Tuesday</option>
+          <option value="wed">Wednesday</option><option value="thu">Thursday</option>
+          <option value="fri">Friday</option><option value="sat">Saturday</option>
+          <option value="sun">Sunday</option>
+        </select>
+        <div class="hint">Workouts run in a cycle and only advance on training days, so
+          taking an extra day off pushes the rest of the week forward rather than skipping a session.</div>
+      </div>
+      <div class="field">
+        <label for="setProteinGoal">Daily protein target (g, 0 for none)</label>
+        <input id="setProteinGoal" type="text" inputmode="numeric" value="0">
       </div>
       <div class="field" style="margin-top:10px">
         <label for="setIncrement">Weight step for the + / − buttons (kg)</label>
@@ -800,6 +868,11 @@ h1,h2,h3,h4{margin:0;font-weight:700;line-height:1.25}
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M8 14h8M8 17.5h5"/>
         </svg><span>Plan</span>
+      </button>
+      <button data-screen="food">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 3v8a3 3 0 0 0 3 3h0a3 3 0 0 0 3-3V3M7 3v6M17 3c-1.5 2-2 4-2 6a2 2 0 0 0 2 2h1V3zM7 14v7M17 11v10"/>
+        </svg><span>Food</span>
       </button>
       <button data-screen="data">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1878,7 +1951,7 @@ const SEED_PLAN = {
         "label": "Sunday",
         "short": "Sun",
         "focus": "Mobility & Core - Hips, T-Spine, Trunk (home, no gym needed)",
-        "isRest": false,
+        "isRest": true,
         "estimatedMinutes": 30,
         "exercises": [
           {
@@ -2368,7 +2441,7 @@ const DIAGRAM_NAMES = {
    3. CONSTANTS
    ========================================================================== */
 const STORE_KEY = 'gymTracker.v1';
-const SCHEMA_VERSION = 1;
+const SCHEMA_VERSION = 2;
 const LB_PER_KG = 2.2046226218;
 
 const DAY_IDS   = ['mon','tue','wed','thu','fri','sat','sun'];
@@ -2550,6 +2623,7 @@ function rawWrite(str) {
 
 let saveTimer = null;
 function save(immediate) {
+  clearCycleCache();
   const write = () => {
     saveTimer = null;
     try { rawWrite(JSON.stringify(state)); }
@@ -2566,10 +2640,19 @@ function freshState() {
     createdAt: new Date().toISOString(),
     units: 'kg',
     theme: null,
-    settings: { sound:true, autoTimer:true, prefill:true, autoExpand:true, increment:2.5 },
+    settings: {
+      sound:true, autoTimer:true, prefill:true, autoExpand:true, increment:2.5,
+      restWeekday:'mon',      // which weekday is rest by default
+      autoToday:true,         // jump to today when the app opens
+      proteinGoal:0           // 0 = no target shown
+    },
     plan: deepClone(SEED_PLAN),
     sessions: {},
-    restDays: {}
+    restDays: {},
+    cycleAnchor: weekStartISO(todayISO()),   // the cycle is counted from here
+    lastViewed: null,
+    foods: [],
+    nutrition: {}
   };
 }
 function deepClone(o) { return JSON.parse(JSON.stringify(o)); }
@@ -2578,6 +2661,7 @@ function deepClone(o) { return JSON.parse(JSON.stringify(o)); }
 function normalizeState(s) {
   const base = freshState();
   if (!s || typeof s !== 'object') return base;
+  const incomingVersion = parseInt(s.version, 10) || 1;
   const out = {
     version: SCHEMA_VERSION,
     createdAt: s.createdAt || base.createdAt,
@@ -2586,9 +2670,16 @@ function normalizeState(s) {
     settings: Object.assign({}, base.settings, (s.settings && typeof s.settings === 'object') ? s.settings : {}),
     plan: base.plan,
     sessions: {},
-    restDays: {}
+    restDays: {},
+    cycleAnchor: /^\d{4}-\d{2}-\d{2}$/.test(s.cycleAnchor) ? s.cycleAnchor : base.cycleAnchor,
+    lastViewed: /^\d{4}-\d{2}-\d{2}$/.test(s.lastViewed) ? s.lastViewed : null,
+    foods: [],
+    nutrition: {}
   };
   out.settings.increment = parseFloat(out.settings.increment) || 2.5;
+  if (DAY_IDS.indexOf(out.settings.restWeekday) === -1) out.settings.restWeekday = 'mon';
+  out.settings.autoToday = out.settings.autoToday !== false;
+  out.settings.proteinGoal = Math.max(0, parseInt(out.settings.proteinGoal, 10) || 0);
 
   /* plan */
   if (s.plan && Array.isArray(s.plan.days) && s.plan.days.length) {
@@ -2655,13 +2746,53 @@ function normalizeState(s) {
       if (sets.length || remark) entries[exId] = { sets: sets, remark: remark };
     }
     if (Object.keys(entries).length) {
-      out.sessions[date] = { date: date, dayId: DAY_IDS.indexOf(ses.dayId) > -1 ? ses.dayId : dayIdOfISO(date), entries: entries };
+      /* workoutId pins what was actually trained that day, so changing the
+         schedule later never rewrites history. Older saves used dayId. */
+      const pinned = ses.workoutId || ses.dayId;
+      out.sessions[date] = {
+        date: date,
+        workoutId: DAY_IDS.indexOf(pinned) > -1 ? pinned : dayIdOfISO(date),
+        entries: entries
+      };
     }
   }
 
   /* rest-day overrides */
-  const rd = (s.restDays && typeof s.restDays === 'object') ? s.restDays : {};
-  for (const k of Object.keys(rd)) if (/^\d{4}-\d{2}-\d{2}$/.test(k)) out.restDays[k] = !!rd[k];
+  const rdo = (s.restDays && typeof s.restDays === 'object') ? s.restDays : {};
+  for (const k of Object.keys(rdo)) if (/^\d{4}-\d{2}-\d{2}$/.test(k)) out.restDays[k] = !!rdo[k];
+
+  /* food list + daily ticks */
+  const fl = Array.isArray(s.foods) ? s.foods : [];
+  const seenFood = Object.create(null);
+  for (const f of fl) {
+    if (!f || !f.name) continue;
+    let id = String(f.id || slug(f.name));
+    while (seenFood[id]) id = id + '-2';
+    seenFood[id] = 1;
+    out.foods.push({
+      id: id,
+      name: String(f.name).slice(0, 60),
+      protein: Math.max(0, Math.round((parseFloat(f.protein) || 0) * 10) / 10)
+    });
+  }
+  const nut = (s.nutrition && typeof s.nutrition === 'object') ? s.nutrition : {};
+  for (const date of Object.keys(nut)) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) continue;
+    const ticks = (nut[date] && nut[date].checked) || {};
+    const keep = {};
+    for (const k of Object.keys(ticks)) if (ticks[k]) keep[k] = true;
+    if (Object.keys(keep).length) out.nutrition[date] = { checked: keep };
+  }
+
+  /* ---- v1 -> v2: the schedule became a rotating cycle ---- */
+  if (incomingVersion < 2) {
+    /* the mobility session becomes the rest-day session rather than a Sunday slot */
+    const mob = out.plan.days.find(d => /mobility/i.test(d.focus || ''));
+    out.plan.days.forEach(d => { d.isRest = false; });
+    if (mob) mob.isRest = true;
+    if (!s.settings || !s.settings.restWeekday) out.settings.restWeekday = 'mon';
+    out.cycleAnchor = weekStartISO(todayISO());
+  }
 
   return out;
 }
@@ -2708,22 +2839,82 @@ function findExercise(exId) {
   return null;
 }
 
-/* ---- rest-day resolution: per-date override wins over the plan default ---- */
+/* ==========================================================================
+   ROTATING SCHEDULE
+   The workouts are an ordered cycle, not a fixed weekday timetable. The cycle
+   advances one step per TRAINING day, so marking any date as leave pushes
+   everything after it forward by one — and un-marking it pulls them back.
+   One plan day carries isRest:true; that is the rest-day session (mobility),
+   shown on rest dates and never consuming a cycle slot.
+   ========================================================================== */
+
+/** The ordered gym workouts. */
+function cycleWorkouts() {
+  const c = state.plan.days.filter(d => !d.isRest);
+  return c.length ? c : state.plan.days;
+}
+/** What to show on a rest date, if the plan defines one. */
+function restSession() { return state.plan.days.find(d => d.isRest) || null; }
+
 function isRestDate(iso) {
   if (Object.prototype.hasOwnProperty.call(state.restDays, iso)) return !!state.restDays[iso];
-  const d = planDay(dayIdOfISO(iso));
-  return !!(d && d.isRest);
+  return dayIdOfISO(iso) === state.settings.restWeekday;
 }
 function setRestDate(iso, val) {
-  const def = !!(planDay(dayIdOfISO(iso)) || {}).isRest;
+  const def = dayIdOfISO(iso) === state.settings.restWeekday;
   if (val === def) delete state.restDays[iso]; else state.restDays[iso] = !!val;
+  cycleCache = Object.create(null);
   save(true);          // a deliberate one-off choice — never leave it in a debounce window
+}
+
+/* Counting days is cheap but happens for every tab on every render, so memoise
+   it. Anything that can change the schedule clears the cache. */
+let cycleCache = Object.create(null);
+function clearCycleCache() { cycleCache = Object.create(null); }
+
+const CYCLE_SCAN_LIMIT = 800;   // ~2 years; beyond that we stop counting
+
+/** How many training days sit between the anchor and this date. */
+function cycleIndexFor(iso) {
+  if (cycleCache[iso] !== undefined) return cycleCache[iso];
+  const len = cycleWorkouts().length || 1;
+  const anchor = state.cycleAnchor || weekStartISO(todayISO());
+  let count = 0, steps = 0;
+  if (iso >= anchor) {
+    for (let d = anchor; d < iso && steps < CYCLE_SCAN_LIMIT; d = addDaysISO(d, 1), steps++) {
+      if (!isRestDate(d)) count++;
+    }
+  } else {
+    /* looking at a date before the anchor: walk backwards */
+    for (let d = addDaysISO(iso, -0); d < anchor && steps < CYCLE_SCAN_LIMIT; d = addDaysISO(d, 1), steps++) {
+      if (!isRestDate(d)) count--;
+    }
+  }
+  const idx = ((count % len) + len) % len;
+  cycleCache[iso] = idx;
+  return idx;
+}
+
+/** The plan day to train on a date: the pinned one if already logged, the rest
+    session on a rest date, otherwise the next workout in the cycle. */
+function workoutForDate(iso) {
+  const ses = state.sessions[iso];
+  if (ses && ses.workoutId) {
+    const pin = state.plan.days.find(d => d.id === ses.workoutId);
+    if (pin) return pin;
+  }
+  if (isRestDate(iso)) return restSession() || cycleWorkouts()[0];
+  const cyc = cycleWorkouts();
+  return cyc[cycleIndexFor(iso)] || cyc[0];
 }
 
 /* ---- session reads/writes ---- */
 function getSession(iso) { return state.sessions[iso] || null; }
 function ensureSession(iso) {
-  if (!state.sessions[iso]) state.sessions[iso] = { date: iso, dayId: dayIdOfISO(iso), entries: {} };
+  if (!state.sessions[iso]) {
+    const w = workoutForDate(iso);
+    state.sessions[iso] = { date: iso, workoutId: w ? w.id : null, entries: {} };
+  }
   return state.sessions[iso];
 }
 function getEntry(iso, exId) {
@@ -2896,7 +3087,7 @@ function weekSummary(anchorISO) {
 function dayStatus(iso) {
   if (isRestDate(iso)) return 'rest';
   const ses = getSession(iso);
-  const day = planDay(dayIdOfISO(iso));
+  const day = workoutForDate(iso);
   const mains = day.exercises.filter(e => e.type === 'main');
   if (!ses) return 'none';
   let doneCount = 0;
@@ -2912,7 +3103,7 @@ function dayStatus(iso) {
   return doneCount >= mains.length ? 'full' : 'part';
 }
 function dayProgress(iso) {
-  const day = planDay(dayIdOfISO(iso));
+  const day = workoutForDate(iso);
   const ses = getSession(iso);
   let target = 0, done = 0;
   day.exercises.filter(e => e.type === 'main').forEach(e => {
@@ -3023,17 +3214,27 @@ function renderTrain() {
   renderExList();
 }
 
+/** "Push A - Chest, Front Delts..." -> "Push A", for the narrow day tabs. */
+function shortFocus(w) {
+  if (!w) return '';
+  const head = String(w.focus || '').split(/\s+[-\u2013\u2014]\s+/)[0];
+  return head.length > 9 ? head.slice(0, 8) + '\u2026' : head;
+}
+
 function renderDayStrip() {
   const today = todayISO();
   const weekStart = weekStartISO(ui.viewDate || today);
   const html = DAY_IDS.map((id, i) => {
     const date = addDaysISO(weekStart, i);
     const st = dayStatus(date);
-    const sel = id === ui.selectedDay;
+    const sel = date === ui.viewDate;
+    const w = workoutForDate(date);
     return '<button class="daytab' + (date === today ? ' is-today' : '') + '" role="tab" ' +
-      'aria-selected="' + (sel ? 'true' : 'false') + '" data-day="' + id + '" data-date="' + date + '" ' +
-      'aria-label="' + esc(DAY_LONG[id]) + ' ' + fmtDateShort(date) + ', ' + st + '">' +
+      'aria-selected="' + (sel ? 'true' : 'false') + '" data-date="' + date + '" ' +
+      'aria-label="' + esc(DAY_LONG[id]) + ' ' + fmtDateShort(date) + ', ' +
+        esc(st === 'rest' ? 'rest day' : (w ? w.focus : '')) + '">' +
       '<span class="d-name">' + DAY_SHORT[id] + '</span>' +
+      '<span class="d-tag">' + esc(st === 'rest' ? 'rest' : shortFocus(w)) + '</span>' +
       '<span class="d-dot ' + st + '"></span>' +
       '</button>';
   }).join('');
@@ -3041,7 +3242,7 @@ function renderDayStrip() {
 }
 
 function renderDayHead() {
-  const iso = ui.viewDate, day = planDay(ui.selectedDay);
+  const iso = ui.viewDate, day = workoutForDate(iso);
   const rest = isRestDate(iso);
   const prog = dayProgress(iso);
   const mains = day.exercises.filter(e => e.type === 'main');
@@ -3053,12 +3254,12 @@ function renderDayHead() {
     '<div class="dayhead">' +
       '<div class="dayhead-top">' +
         '<div style="flex:1;min-width:0">' +
-          '<h2>' + esc(rest ? 'Rest day' : day.focus) + '</h2>' +
-          '<div class="date">' + esc(DAY_LONG[day.id]) + ' · ' + esc(fmtDateShort(iso)) +
+          '<h2>' + esc(rest && !(day && day.isRest) ? 'Rest day' : day.focus) + '</h2>' +
+          '<div class="date">' + esc(DAY_LONG[dayIdOfISO(iso)]) + ' · ' + esc(fmtDateShort(iso)) +
             (isToday ? ' · <b style="color:var(--accent)">today</b>' : '') + '</div>' +
         '</div>' +
       '</div>' +
-      (rest ? '' :
+      (rest && !(day && day.isRest && day.exercises.length) ? '' :
         '<div class="meta-row">' +
           '<span class="chip">' + mains.length + ' exercises</span>' +
           '<span class="chip">' + targetSets + ' sets</span>' +
@@ -3074,21 +3275,23 @@ function renderDayHead() {
     '</div>';
 
   $('#restSwitch').addEventListener('change', function () {
-    setRestDate(ui.viewDate, this.checked);
-    renderTrain();
-    toast(this.checked ? 'Marked as a rest day' : 'Back to training', 'ok');
+    const on = this.checked;
+    setRestDate(ui.viewDate, on);
+    selectDate(ui.viewDate);   /* the cycle shifted; re-resolve this date's workout */
+    renderAll();
+    toast(on ? 'Rest day — the week shifts forward' : 'Back to training', 'ok');
   });
 }
 
 function renderExList() {
-  const iso = ui.viewDate, day = planDay(ui.selectedDay);
+  const iso = ui.viewDate, day = workoutForDate(iso);
 
-  if (isRestDate(iso)) {
+  if (isRestDate(iso) && !(day && day.isRest && day.exercises.length)) {
     $('#exList').innerHTML =
       '<div class="restbanner"><div class="big">🛌</div>' +
       '<h3>Rest and grow</h3>' +
       '<p>Muscle is built between sessions, not during them. Sleep, eat protein, and come back stronger.<br>' +
-      'Flip the switch above if you change your mind.</p></div>';
+      'Flip the switch above if you change your mind — the rest of the week shifts to match.</p></div>';
     $('#dayFoot').innerHTML = '';
     return;
   }
@@ -3502,7 +3705,7 @@ function markSimpleDone(exId) {
 function rerenderCard(exId) {
   const wrap = document.querySelector('[data-exwrap="' + cssEsc(exId) + '"]');
   if (!wrap) { renderExList(); return; }
-  const day = planDay(ui.selectedDay);
+  const day = workoutForDate(ui.viewDate);
   const ex = day.exercises.find(e => e.id === exId);
   if (!ex) { renderExList(); return; }
   const mains = day.exercises.filter(e => e.type === 'main');
@@ -3734,11 +3937,13 @@ function renderPlan() {
         d.exercises.map((e, i) => planItemHTML(d, e, i)).join('') +
         '<div class="ex-actions" style="margin-top:11px">' +
           '<button class="btn sm grow primary" data-act="pe-add" data-day="' + d.id + '">+ Add exercise</button>' +
-          '<button class="btn sm" data-act="pe-rest" data-day="' + d.id + '">' +
-            (d.isRest ? '↺ Make training day' : '🛌 Default to rest') + '</button>' +
+          '<button class="btn sm" data-act="pe-rest" data-day="' + d.id + '"' +
+            (d.isRest ? ' disabled' : '') + '>' +
+            (d.isRest ? '🛌 This is the rest session' : 'Use as the rest session') + '</button>' +
         '</div>' +
-        '<p class="note" style="margin:9px 0 0">“Default to rest” makes every ' + esc(DAY_LONG[d.id]) +
-        ' a rest day. You can still override a single date on the Train tab.</p>' +
+        '<p class="note" style="margin:9px 0 0">The rest session is what shows on your rest days. ' +
+        'Every other day here is a workout in the cycle, run in this order. Which weekday is ' +
+        'rest is set under Data › Settings.</p>' +
       '</div>';
     }
     return '<div class="pe-day">' +
@@ -4044,6 +4249,9 @@ function renderData() {
   $('#setPrefill').checked = !!state.settings.prefill;
   $('#setAutoExpand').checked = !!state.settings.autoExpand;
   $('#setIncrement').value = String(state.settings.increment);
+  $('#setAutoToday').checked = state.settings.autoToday !== false;
+  $('#setRestWeekday').value = state.settings.restWeekday || 'mon';
+  $('#setProteinGoal').value = String(state.settings.proteinGoal || 0);
 }
 
 function exportData() {
@@ -4141,6 +4349,116 @@ function clearAll() {
 }
 
 /* ==========================================================================
+   14b. FOOD / PROTEIN
+   ========================================================================== */
+function proteinFor(iso) {
+  const ticked = (state.nutrition[iso] && state.nutrition[iso].checked) || {};
+  let total = 0, count = 0;
+  for (const f of state.foods) if (ticked[f.id]) { total += f.protein; count++; }
+  return { total: Math.round(total * 10) / 10, count: count };
+}
+function toggleFood(iso, foodId) {
+  if (!state.nutrition[iso]) state.nutrition[iso] = { checked: {} };
+  const c = state.nutrition[iso].checked;
+  if (c[foodId]) delete c[foodId]; else c[foodId] = true;
+  if (!Object.keys(c).length) delete state.nutrition[iso];
+  save(true);
+}
+
+function renderFood() {
+  const iso = ui.viewDate || todayISO();
+  const p = proteinFor(iso);
+  const goal = state.settings.proteinGoal || 0;
+  const pct = goal ? Math.min(100, Math.round(p.total / goal * 100)) : 0;
+
+  $('#proteinTop').innerHTML =
+    '<div class="protein-top">' +
+      '<div style="font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--text-faint)">' +
+        esc(fmtDateShort(iso)) + (iso === todayISO() ? ' · today' : '') + '</div>' +
+      '<div class="protein-num" style="margin-top:6px">' +
+        '<b>' + p.total + '</b><span>g protein</span>' +
+        (goal ? '<span class="goal" style="margin-left:auto">of ' + goal + ' g</span>' : '') +
+      '</div>' +
+      (goal ? '<div class="progress" style="margin-top:10px"><i style="width:' + pct + '%"></i></div>' : '') +
+      '<div style="font-size:12px;color:var(--text-faint);margin-top:8px">' +
+        (state.foods.length
+          ? p.count + ' of ' + state.foods.length + ' items ticked'
+          : 'Add the things you eat and what each gives you.') +
+      '</div>' +
+    '</div>';
+
+  const ticked = (state.nutrition[iso] && state.nutrition[iso].checked) || {};
+  $('#foodList').innerHTML = state.foods.length
+    ? state.foods.map(f =>
+        '<button class="food-row' + (ticked[f.id] ? ' on' : '') + '" data-food="' + esc(f.id) + '" ' +
+          'aria-pressed="' + (ticked[f.id] ? 'true' : 'false') + '">' +
+          '<span class="food-box">✓</span>' +
+          '<span class="food-name">' + esc(f.name) + '</span>' +
+          '<span class="food-g">' + f.protein + ' g</span>' +
+        '</button>').join('')
+    : '<div class="empty"><div class="e-icon">🍳</div><h4>Nothing added yet</h4>' +
+      '<p>Add each thing you normally eat once, with the protein it gives you.<br>' +
+      'After that it is one tap a day.</p></div>';
+
+  /* last 14 days */
+  const rows = [];
+  for (let i = 0; i < 14; i++) {
+    const d = addDaysISO(iso, -i);
+    const pp = proteinFor(d);
+    if (!pp.count && i) continue;
+    rows.push({ d: d, p: pp });
+  }
+  const maxP = Math.max(goal || 0, ...rows.map(r => r.p.total), 1);
+  $('#proteinHistory').innerHTML = rows.length
+    ? rows.map(r =>
+        '<div class="mbar' + (r.p.total ? '' : ' zero') + '">' +
+          '<span class="m-name" style="text-transform:none">' + esc(fmtDateNum(r.d)) + '</span>' +
+          '<span class="m-track"><i style="width:' + Math.round(r.p.total / maxP * 100) + '%;background:' +
+            (goal && r.p.total >= goal ? 'var(--ok)' : 'var(--accent)') + '"></i></span>' +
+          '<span class="m-n">' + (r.p.total || '—') + '</span>' +
+        '</div>').join('')
+    : '<p class="note" style="margin:0">Nothing logged yet.</p>';
+}
+
+function foodFormSheet(existing) {
+  const f = existing || { name: '', protein: '' };
+  openSheet(existing ? 'Edit item' : 'Add an item',
+    '<div class="field"><label for="fd-name">What is it</label>' +
+      '<input id="fd-name" value="' + esc(f.name) + '" placeholder="4 eggs" autocomplete="off"></div>' +
+    '<div class="field"><label for="fd-p">Protein it gives you (g)</label>' +
+      '<input id="fd-p" type="text" inputmode="decimal" value="' + esc(String(f.protein)) + '" placeholder="24">' +
+      '<div class="hint">Whatever portion you actually eat — one entry for "4 eggs" beats ' +
+      'doing sums at the fridge.</div></div>',
+    (existing ? '<button class="btn danger" data-act="fd-del">Delete</button>' : '') +
+    '<button class="btn grow ghost" data-act="sheet-cancel">Cancel</button>' +
+    '<button class="btn grow primary" data-act="fd-save">' + (existing ? 'Save' : 'Add') + '</button>');
+  $('#sheetFoot').querySelector('[data-act="sheet-cancel"]').onclick = closeSheet;
+  const del = $('#sheetFoot').querySelector('[data-act="fd-del"]');
+  if (del) del.onclick = () => {
+    closeSheet();
+    confirmSheet('Remove ' + esc(f.name) + '?',
+      'It disappears from every day, including days you already ticked it on.',
+      'Remove', () => {
+        state.foods = state.foods.filter(x => x.id !== f.id);
+        for (const d of Object.keys(state.nutrition)) {
+          delete state.nutrition[d].checked[f.id];
+          if (!Object.keys(state.nutrition[d].checked).length) delete state.nutrition[d];
+        }
+        save(true); renderFood(); toast('Removed', 'ok');
+      }, true);
+  };
+  $('#sheetFoot').querySelector('[data-act="fd-save"]').onclick = () => {
+    const name = $('#fd-name').value.trim();
+    const protein = Math.max(0, Math.round((parseFloat($('#fd-p').value) || 0) * 10) / 10);
+    if (!name) { toast('Give it a name', 'err'); $('#fd-name').focus(); return; }
+    if (existing) { existing.name = name; existing.protein = protein; }
+    else state.foods.push({ id: uid(slug(name)), name: name, protein: protein });
+    save(true); closeSheet(); renderFood();
+    toast(existing ? 'Saved' : 'Added', 'ok');
+  };
+}
+
+/* ==========================================================================
    15. NAVIGATION + RENDER DISPATCH
    ========================================================================== */
 function setScreen(name) {
@@ -4155,16 +4473,20 @@ function setScreen(name) {
 }
 function selectDate(iso) {
   ui.viewDate = iso;
-  ui.selectedDay = dayIdOfISO(iso);
+  const w = workoutForDate(iso);
+  ui.selectedDay = w ? w.id : DAY_IDS[0];
   ui.openEx = {};
+  ui.openDia = {};
+  if (state.lastViewed !== iso) { state.lastViewed = iso; save(); }
 }
 function renderAll() {
   if (ui.screen === 'train') renderTrain();
   else if (ui.screen === 'stats') renderStats();
   else if (ui.screen === 'plan') renderPlan();
+  else if (ui.screen === 'food') renderFood();
   else if (ui.screen === 'data') renderData();
-  const d = planDay(ui.selectedDay);
-  $('#brandSub').textContent = isRestDate(ui.viewDate) ? 'Rest day' : d.focus;
+  const d = workoutForDate(ui.viewDate);
+  $('#brandSub').textContent = isRestDate(ui.viewDate) ? 'Rest day' : (d ? d.focus : '');
 }
 function applyUnits() {
   $('#unitKg').setAttribute('aria-pressed', state.units === 'kg' ? 'true' : 'false');
@@ -4211,7 +4533,7 @@ function wire() {
   /* --- day tabs --- */
   $('#dayStrip').addEventListener('click', e => {
     const b = e.target.closest('.daytab'); if (!b) return;
-    selectDate(b.dataset.date); renderTrain(); renderAll();
+    selectDate(b.dataset.date); renderAll();
   });
 
   /* --- exercise list: delegated clicks --- */
@@ -4286,9 +4608,11 @@ function wire() {
     else if (act === 'pe-del') deleteEx(dayId, i);
     else if (act === 'pe-add') pickerSheet(dayId, null);
     else if (act === 'pe-rest') {
-      const d = planDay(dayId); d.isRest = !d.isRest; save(true); renderPlan();
-      if (ui.screen === 'train') renderTrain();
-      toast(d.label + (d.isRest ? ' is now a rest day' : ' is now a training day'), 'ok');
+      /* exactly one plan day is the rest session; the others form the cycle */
+      state.plan.days.forEach(x => { x.isRest = x.id === dayId; });
+      clearCycleCache(); save(true);
+      selectDate(ui.viewDate); renderPlan(); renderAll();
+      toast(planDay(dayId).label + ' is now the rest-day session', 'ok');
     }
     else if (act === 'pe-edit') {
       const d = planDay(dayId), ex = d.exercises[i]; if (!ex) return;
@@ -4323,6 +4647,20 @@ function wire() {
       });
   });
 
+  /* --- food --- */
+  $('#foodList').addEventListener('click', e => {
+    const b = e.target.closest('[data-food]'); if (!b) return;
+    toggleFood(ui.viewDate || todayISO(), b.dataset.food);
+    renderFood();
+  });
+  $('#foodList').addEventListener('contextmenu', e => {
+    const b = e.target.closest('[data-food]'); if (!b) return;
+    e.preventDefault();
+    const f = state.foods.find(x => x.id === b.dataset.food);
+    if (f) foodFormSheet(f);
+  });
+  $('#btnAddFood').addEventListener('click', () => foodFormSheet(null));
+
   /* --- data --- */
   $('#btnExport').addEventListener('click', exportData);
   $('#btnImport').addEventListener('click', () => $('#fileInput').click());
@@ -4336,6 +4674,20 @@ function wire() {
       state.settings[key] = this.checked; save(true);
       if (key === 'prefill' && ui.screen === 'train') renderTrain();
     }));
+  $('#setAutoToday').addEventListener('change', function () {
+    state.settings.autoToday = this.checked; save(true);
+    toast(this.checked ? 'Will open on today' : 'Will reopen where you left off', 'ok');
+  });
+  $('#setRestWeekday').addEventListener('change', function () {
+    state.settings.restWeekday = this.value;
+    clearCycleCache(); save(true);
+    selectDate(ui.viewDate); renderAll();
+    toast(DAY_LONG[this.value] + ' is now your rest day', 'ok');
+  });
+  $('#setProteinGoal').addEventListener('change', function () {
+    state.settings.proteinGoal = Math.max(0, parseInt(this.value, 10) || 0);
+    save(true); if (ui.screen === 'food') renderFood();
+  });
   $('#setIncrement').addEventListener('change', function () {
     state.settings.increment = parseFloat(this.value) || 2.5; save(true);
     if (ui.screen === 'train') renderTrain();
@@ -4357,7 +4709,9 @@ function wire() {
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) { save(true); return; }
     if (timer.endAt) paintTimer();
-    if (ui.viewDate && ui.viewDate !== todayISO() && ui.wasToday) { selectDate(todayISO()); renderAll(); }
+    if (state.settings.autoToday && ui.viewDate && ui.viewDate !== todayISO() && ui.wasToday) {
+      selectDate(todayISO()); renderAll();
+    }
   });
   window.addEventListener('pagehide', () => save(true));
   window.addEventListener('beforeunload', () => save(true));
@@ -4370,8 +4724,9 @@ function boot() {
   state = load();
   applyTheme();
   applyUnits();
-  selectDate(todayISO());
-  ui.wasToday = true;
+  /* "Jump to today" off means the app reopens wherever you left it. */
+  selectDate(state.settings.autoToday ? todayISO() : (state.lastViewed || todayISO()));
+  ui.wasToday = state.settings.autoToday;
   ui.openPlanDay = ui.selectedDay;
   wire();
   renderAll();
