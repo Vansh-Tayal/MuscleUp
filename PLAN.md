@@ -33,7 +33,7 @@ _Italic entries are warm-ups and cool-downs._
 |  | Seated Leg Curl | Seated Leg Curl Machine - selectorised | hamstrings | 3 × 10-15 |
 |  | Seated Hip Adduction | Hip Adduction Machine - selectorised | adductors | 2 × 12-15 |
 |  | Seated Hip Abduction | Hip Abduction Machine - selectorised | abductors | 2 × 12-15 |
-|  | Standing Calf Raise | Standing Calf Raise Machine | calves | 3 × 12-20 |
+|  | Leg Press Calf Raise | 45-Degree Leg Press Machine - feet low on the platform | calves | 3 × 12-20 |
 |  | _Couch Stretch + Pigeon Hold_ | Exercise Mat + Flat Bench | mobility | 6-8 min |
 | **Thu** — Push B - Front Delts, Side Delts, Rear Delts, Upper Chest, Triceps, Abs | _Elliptical + Rotator Cuff Prep_ | Elliptical Trainer + Cable Station - low pulley, D-handle | mobility | 7-8 min |
 |  | Smith Machine Shoulder Press - seated | Smith Machine + upright bench set under the bar | front delts | 3 × 8-12 |
@@ -64,7 +64,7 @@ _Italic entries are warm-ups and cool-downs._
 |  | Seated Calf Raise | Seated Calf Raise Machine | calves | 3 × 12-20 |
 |  | Captain's Chair Knee Raise | Captain's Chair - back-supported knee raise station | abs | 2 × 12-20 |
 |  | High-to-Low Cable Woodchopper (1 set per side) | Cable Station - high pulley, D-handle | obliques | 2 × 12-15 |
-|  | Standing Cable Hip Abduction (1 set per side) | Cable Station - low pulley, ankle strap | abductors | 2 × 12-15 |
+|  | Seated Hip Abduction - torso upright | Hip Abduction Machine - selectorised, sit tall against the pad | abductors | 2 × 15-20 |
 |  | _Hamstring + Calf Stretch Sequence_ | Exercise Mat + Flat Bench | mobility | 6-8 min |
 | **Sun** — Mobility & Core - Hips, T-Spine, Trunk (home, no gym needed) | _Brisk Walk + Joint Circles_ | Exercise Mat | mobility | 5-6 min |
 |  | World's Greatest Stretch (1 set per side) | Exercise Mat | mobility | 2 × 5-6 |

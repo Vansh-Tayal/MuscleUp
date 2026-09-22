@@ -1306,16 +1306,20 @@ const SEED_PLAN = {
             "type": "main"
           },
           {
-            "id": "wed-standing-calf-raise",
-            "name": "Standing Calf Raise",
-            "machine": "Standing Calf Raise Machine",
+            "id": "wed-leg-press-calf-raise",
+            "name": "Leg Press Calf Raise",
+            "machine": "45-Degree Leg Press Machine - feet low on the platform",
             "primaryMuscle": "calves",
             "secondaryMuscles": [],
             "sets": 3,
             "repRange": "12-20",
             "restSeconds": 45,
-            "formCue": "Drop the heels for a deep stretch, pause two seconds on top",
-            "type": "main"
+            "formCue": "Heels off the platform edge, knees stay straight, no bounce",
+            "type": "main",
+            "alternatives": [
+              "Smith Machine Calf Raise, toes on a plate",
+              "Seated Calf Raise, extra sets"
+            ]
           },
           {
             "id": "wed-cooldown-hip-quad-stretch",
@@ -1831,18 +1835,22 @@ const SEED_PLAN = {
             "type": "main"
           },
           {
-            "id": "sat-standing-cable-hip-abduction",
-            "name": "Standing Cable Hip Abduction (1 set per side)",
-            "machine": "Cable Station - low pulley, ankle strap",
+            "id": "sat-hip-abduction-upright",
+            "name": "Seated Hip Abduction - torso upright",
+            "machine": "Hip Abduction Machine - selectorised, sit tall against the pad",
             "primaryMuscle": "abductors",
             "secondaryMuscles": [
               "glutes"
             ],
             "sets": 2,
-            "repRange": "12-15",
+            "repRange": "15-20",
             "restSeconds": 60,
-            "formCue": "Stand tall, sweep the leg out sideways, no leaning over",
-            "type": "main"
+            "formCue": "Sit tall against the backrest, push out slow, pause wide",
+            "type": "main",
+            "alternatives": [
+              "Banded lateral walk",
+              "Side-lying hip raise on a mat"
+            ]
           },
           {
             "id": "sat-cooldown-hamstring-calf-stretch",
@@ -2198,7 +2206,12 @@ const DIAGRAMS = {
   "hip-abduction": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Front view of a seated hip abduction machine: lifter seated with pads on the outside of the knees, pushing the knees apart against the stack.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M120 44v28\"/><path class=\"st\" d=\"M96 150h48\"/>\n<rect class=\"st-f\" x=\"106\" y=\"72\" width=\"28\" height=\"42\" rx=\"3\"/>\n<rect class=\"st-f\" x=\"98\" y=\"114\" width=\"44\" height=\"9\" rx=\"3\"/>\n<circle cx=\"104\" cy=\"70\" r=\"4\" fill=\"currentColor\"/><circle cx=\"136\" cy=\"70\" r=\"4\" fill=\"currentColor\"/>\n<path class=\"st\" d=\"M104 70L62 100M136 70l42 30\"/>\n<rect class=\"st-f\" x=\"48\" y=\"96\" width=\"11\" height=\"34\" rx=\"5\"/>\n<rect class=\"st-f\" x=\"181\" y=\"96\" width=\"11\" height=\"34\" rx=\"5\"/>\n<text class=\"lbl\" x=\"34\" y=\"90\">pads on the outer knees</text>\n<circle class=\"head\" cx=\"120\" cy=\"58\" r=\"9\"/>\n<path class=\"bod\" d=\"M122 68l-4 46\"/>\n<path class=\"bod\" d=\"M118 114L72 124\"/><path class=\"bod\" d=\"M118 114l50 10\"/>\n<path class=\"thin\" d=\"M120 70q-8 14-2 44\"/>\n<text class=\"lbl\" x=\"126\" y=\"98\">lean forward slightly</text>\n<path class=\"arw\" d=\"M80 146q-14-6-18-14\"/><path class=\"arw\" d=\"M160 146q14-6 18-14\"/>\n</svg>",
   "standing-calf-raise": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of a standing calf raise machine: shoulder pads loaded, toes on the edge of a block, heels dropping below the step then pressing up.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M166 150V38\"/><path class=\"st\" d=\"M150 150h32\"/>\n<rect class=\"st-f\" x=\"152\" y=\"44\" width=\"28\" height=\"12\" rx=\"4\"/>\n<path class=\"st\" d=\"M166 56v14\"/>\n<text class=\"lbl\" x=\"148\" y=\"38\">shoulder pads</text>\n<path class=\"st-f\" d=\"M86 126h44v24H86z\"/>\n<text class=\"lbl\" x=\"88\" y=\"122\">block</text>\n<circle class=\"head\" cx=\"122\" cy=\"62\" r=\"9\"/>\n<path class=\"bod\" d=\"M122 72v40\"/>\n<path class=\"bod\" d=\"M122 112l-4 20\"/>\n<path class=\"bod\" d=\"M118 132l-16 -2\"/>\n<path class=\"thin\" d=\"M102 130v16\"/>\n<text class=\"lbl\" x=\"34\" y=\"146\">heels drop below the step</text>\n<path class=\"arw\" d=\"M64 118v-26\"/>\n<text class=\"lbl\" x=\"34\" y=\"86\">pause two seconds on top</text>\n</svg>",
   "seated-calf-raise": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of a seated calf raise machine: lifter seated with a pad across the thighs just above the knees, toes on the foot block, heels sinking low then pressing up.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M62 150h124\"/><path class=\"st\" d=\"M176 150V70\"/>\n<rect class=\"st-f\" x=\"160\" y=\"74\" width=\"24\" height=\"52\" rx=\"2\"/>\n<path class=\"thin\" d=\"M160 86h24M160 98h24M160 110h24\"/>\n<rect class=\"st-f\" x=\"110\" y=\"112\" width=\"46\" height=\"9\" rx=\"3\"/>\n<path class=\"st\" d=\"M132 121v29\"/>\n<rect class=\"st-f\" x=\"96\" y=\"92\" width=\"44\" height=\"11\" rx=\"4\"/>\n<path class=\"st\" d=\"M100 92V74\"/>\n<text class=\"lbl\" x=\"88\" y=\"70\">pad just above the knees</text>\n<circle class=\"head\" cx=\"136\" cy=\"70\" r=\"8\"/>\n<path class=\"bod\" d=\"M134 80l2 32\"/>\n<path class=\"bod\" d=\"M136 112l-38 -4\"/>\n<path class=\"bod\" d=\"M98 108l-8 24\"/>\n<path class=\"st-f\" d=\"M70 130h30v20H70z\"/>\n<text class=\"lbl\" x=\"34\" y=\"126\">toes on the block</text>\n<path class=\"arw\" d=\"M56 128V98\"/>\n</svg>",
-  "cable-hip-abduction": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Front view of a standing cable hip abduction: ankle strap on a low pulley, lifter standing tall and sweeping one leg out sideways.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M36 150V58\"/>\n<rect class=\"st-f\" x=\"26\" y=\"64\" width=\"22\" height=\"56\" rx=\"2\"/>\n<path class=\"thin\" d=\"M26 76h22M26 88h22M26 100h22M26 112h22\"/>\n<circle class=\"st\" cx=\"42\" cy=\"132\" r=\"5\"/>\n<text class=\"lbl\" x=\"28\" y=\"148\">low</text>\n<path class=\"thin\" d=\"M47 133l44 8\"/>\n<path class=\"st\" d=\"M88 136h10v10H88z\"/>\n<text class=\"lbl\" x=\"64\" y=\"118\">ankle strap</text>\n<circle class=\"head\" cx=\"148\" cy=\"52\" r=\"9\"/>\n<path class=\"bod\" d=\"M148 62v46\"/>\n<path class=\"bod\" d=\"M148 108l4 22 2 20\"/>\n<path class=\"bod\" d=\"M148 108l-26 26-26 12\"/>\n<path class=\"thin\" d=\"M148 46v-8\"/>\n<text class=\"lbl\" x=\"156\" y=\"42\">stand tall, do not lean</text>\n<path class=\"bod\" d=\"M136 76l6 30\"/><path class=\"bod\" d=\"M160 76l-6 30\"/>\n<path class=\"arw\" d=\"M96 122q26 6 42 -6\"/>\n<text class=\"lbl\" x=\"86\" y=\"158\">sweep the leg out sideways</text>\n</svg>"
+  "cable-hip-abduction": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Front view of a standing cable hip abduction: ankle strap on a low pulley, lifter standing tall and sweeping one leg out sideways.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M36 150V58\"/>\n<rect class=\"st-f\" x=\"26\" y=\"64\" width=\"22\" height=\"56\" rx=\"2\"/>\n<path class=\"thin\" d=\"M26 76h22M26 88h22M26 100h22M26 112h22\"/>\n<circle class=\"st\" cx=\"42\" cy=\"132\" r=\"5\"/>\n<text class=\"lbl\" x=\"28\" y=\"148\">low</text>\n<path class=\"thin\" d=\"M47 133l44 8\"/>\n<path class=\"st\" d=\"M88 136h10v10H88z\"/>\n<text class=\"lbl\" x=\"64\" y=\"118\">ankle strap</text>\n<circle class=\"head\" cx=\"148\" cy=\"52\" r=\"9\"/>\n<path class=\"bod\" d=\"M148 62v46\"/>\n<path class=\"bod\" d=\"M148 108l4 22 2 20\"/>\n<path class=\"bod\" d=\"M148 108l-26 26-26 12\"/>\n<path class=\"thin\" d=\"M148 46v-8\"/>\n<text class=\"lbl\" x=\"156\" y=\"42\">stand tall, do not lean</text>\n<path class=\"bod\" d=\"M136 76l6 30\"/><path class=\"bod\" d=\"M160 76l-6 30\"/>\n<path class=\"arw\" d=\"M96 122q26 6 42 -6\"/>\n<text class=\"lbl\" x=\"86\" y=\"158\">sweep the leg out sideways</text>\n</svg>",
+  "leg-press-calf-raise": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of a calf raise on the 45-degree leg press: feet placed low on the platform with the heels hanging off the edge, knees held straight, pressing through the toes.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M30 138L176 34\"/><path class=\"st\" d=\"M40 148L186 44\"/>\n<path class=\"st\" d=\"M26 148h22\"/>\n<path class=\"st-f\" d=\"M132 56l30 22-16 22-30-22z\"/>\n<rect class=\"st-f\" x=\"34\" y=\"112\" width=\"52\" height=\"10\" rx=\"3\"/>\n<path class=\"st-f\" d=\"M36 112L28 74l14-4 10 38z\"/>\n<circle class=\"head\" cx=\"42\" cy=\"82\" r=\"8\"/>\n<path class=\"bod\" d=\"M50 90l24 22\"/>\n<path class=\"bod\" d=\"M74 112l46-16\"/>\n<path class=\"bod\" d=\"M120 96l18 -6\"/>\n<path class=\"thin\" d=\"M74 112l48-17\"/>\n<text class=\"lbl\" x=\"58\" y=\"132\">knees stay straight</text>\n<path class=\"thin\" d=\"M126 82v18\"/>\n<text class=\"lbl\" x=\"128\" y=\"78\">heels hang off the edge</text>\n<path class=\"arw\" d=\"M158 108l22-16\"/>\n</svg>",
+  "cable-crunch": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of a kneeling cable crunch: rope on a high pulley held beside the head, hips staying still while the spine rounds down toward the knees.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M202 150V30\"/>\n<rect class=\"st-f\" x=\"192\" y=\"54\" width=\"22\" height=\"64\" rx=\"2\"/>\n<path class=\"thin\" d=\"M192 66h22M192 78h22M192 90h22M192 102h22\"/>\n<circle class=\"st\" cx=\"198\" cy=\"42\" r=\"5\"/>\n<path class=\"thin\" d=\"M193 44l-70 26\"/>\n<path class=\"st\" d=\"M122 66v18\"/><path class=\"st\" d=\"M116 70h6M116 80h6\"/>\n<circle class=\"head\" cx=\"98\" cy=\"82\" r=\"9\"/>\n<path class=\"bod\" d=\"M104 90q12 18 6 34\"/>\n<path class=\"bod\" d=\"M110 124l-24 4\"/>\n<path class=\"bod\" d=\"M86 128l-4 22\"/>\n<circle cx=\"110\" cy=\"124\" r=\"3.4\" fill=\"currentColor\"/>\n<text class=\"lbl\" x=\"112\" y=\"140\">hips stay put</text>\n<path class=\"bod\" d=\"M104 88l16-8\"/>\n<text class=\"lbl\" x=\"52\" y=\"72\">rope beside the head</text>\n<path class=\"arw\" d=\"M62 92q10 26 30 34\"/>\n<text class=\"lbl\" x=\"22\" y=\"118\">round the spine down</text>\n</svg>",
+  "machine-crunch": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of a seated abdominal crunch machine: chest pads over the shoulders, lifter curling the ribs toward the hips against the stack.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M56 150h140\"/><path class=\"st\" d=\"M188 150V66\"/>\n<rect class=\"st-f\" x=\"172\" y=\"70\" width=\"24\" height=\"60\" rx=\"2\"/>\n<path class=\"thin\" d=\"M172 82h24M172 94h24M172 106h24\"/>\n<rect class=\"st-f\" x=\"146\" y=\"60\" width=\"11\" height=\"52\" rx=\"4\"/>\n<rect class=\"st-f\" x=\"104\" y=\"112\" width=\"48\" height=\"9\" rx=\"3\"/>\n<path class=\"st\" d=\"M128 121v29\"/>\n<path class=\"st\" d=\"M150 72l-36 -6\"/>\n<rect class=\"st-f\" x=\"96\" y=\"58\" width=\"22\" height=\"10\" rx=\"4\"/>\n<text class=\"lbl\" x=\"66\" y=\"52\">chest pads</text>\n<circle class=\"head\" cx=\"124\" cy=\"72\" r=\"8\"/>\n<path class=\"bod\" d=\"M124 82q-6 18 0 30\"/>\n<path class=\"bod\" d=\"M124 112l-24 6\"/><path class=\"bod\" d=\"M100 118l-4 32\"/>\n<path class=\"bod\" d=\"M118 86l-8-14\"/>\n<path class=\"arw\" d=\"M78 92q4 24 18 30\"/>\n<text class=\"lbl\" x=\"30\" y=\"86\">ribs toward the hips</text>\n</svg>",
+  "captains-chair": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Side view of a captain's chair knee raise: lifter supported on forearm pads with the back against a pad, curling the pelvis up as the knees rise.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M168 150V40\"/><path class=\"st\" d=\"M150 150h36\"/>\n<rect class=\"st-f\" x=\"156\" y=\"58\" width=\"11\" height=\"46\" rx=\"4\"/>\n<text class=\"lbl\" x=\"172\" y=\"54\">back pad</text>\n<rect class=\"st-f\" x=\"118\" y=\"70\" width=\"40\" height=\"10\" rx=\"4\"/>\n<text class=\"lbl\" x=\"92\" y=\"66\">forearm pads</text>\n<circle class=\"head\" cx=\"150\" cy=\"56\" r=\"8\"/>\n<path class=\"bod\" d=\"M148 66v42\"/>\n<path class=\"bod\" d=\"M142 76l-20 -2\"/>\n<path class=\"bod\" d=\"M148 108q-18 6-24-10\"/>\n<path class=\"bod\" d=\"M124 98l-18 6\"/>\n<path class=\"thin\" d=\"M148 108q-14 10-4 22\"/>\n<text class=\"lbl\" x=\"106\" y=\"130\">curl the pelvis up, do not swing</text>\n<path class=\"arw\" d=\"M96 126q4-26 24-32\"/>\n</svg>",
+  "woodchopper": "<svg class=\"dia\" viewBox=\"0 0 240 162\" role=\"img\" aria-label=\"Front view of a high-to-low cable woodchopper: handle on a high pulley, arms straight, torso rotating down and across while the hips stay facing forward.\">\n<rect class=\"bg\" width=\"240\" height=\"162\"/>\n<line class=\"floor\" x1=\"14\" y1=\"150\" x2=\"226\" y2=\"150\"/>\n<path class=\"st\" d=\"M206 150V30\"/>\n<rect class=\"st-f\" x=\"196\" y=\"54\" width=\"22\" height=\"60\" rx=\"2\"/>\n<path class=\"thin\" d=\"M196 66h22M196 78h22M196 90h22M196 102h22\"/>\n<circle class=\"st\" cx=\"202\" cy=\"42\" r=\"5\"/>\n<text class=\"lbl\" x=\"186\" y=\"36\">high</text>\n<path class=\"thin\" d=\"M197 44L104 108\"/>\n<circle class=\"head\" cx=\"112\" cy=\"58\" r=\"9\"/>\n<path class=\"bod\" d=\"M112 68q8 22 2 42\"/>\n<path class=\"bod\" d=\"M114 110l-12 22-2 18\"/><path class=\"bod\" d=\"M114 110l14 22 2 18\"/>\n<path class=\"bod\" d=\"M114 78l-4 22 -6 10\"/>\n<text class=\"lbl\" x=\"122\" y=\"96\">arms stay straight</text>\n<path class=\"thin\" d=\"M100 132h30\"/>\n<text class=\"lbl\" x=\"66\" y=\"146\">hips stay facing front</text>\n<path class=\"arw\" d=\"M158 62L106 112\"/>\n<text class=\"lbl\" x=\"130\" y=\"58\">turn with the ribs</text>\n</svg>"
 };
 const DIAGRAM_NAMES = {
     "barbellbenchpress": "bench-barbell",
@@ -2297,9 +2310,20 @@ const DIAGRAM_NAMES = {
     "lyinglegcurl": "lying-leg-curl",
     "seatedhipadduction": "hip-adduction",
     "seatedhipabduction": "hip-abduction",
+    "seatedhipabductiontorsoupright": "hip-abduction",
     "standingcalfraise": "standing-calf-raise",
+    "smithmachinecalfraise": "standing-calf-raise",
     "seatedcalfraise": "seated-calf-raise",
+    "legpresscalfraise": "leg-press-calf-raise",
     "standingcablehipabduction1setperside": "cable-hip-abduction",
+    "kneelingcablecrunch": "cable-crunch",
+    "cablecrunch": "cable-crunch",
+    "machinecrunch": "machine-crunch",
+    "abdominalcrunchmachine": "machine-crunch",
+    "captainschairkneeraise": "captains-chair",
+    "hangingkneeraise": "captains-chair",
+    "hightolowcablewoodchopper1setperside": "woodchopper",
+    "cablewoodchopper": "woodchopper",
     "barbellromaniandeadlift": "romanian-deadlift",
     "romaniandeadlift": "romanian-deadlift",
     "smithmachineromaniandeadlift": "romanian-deadlift",
